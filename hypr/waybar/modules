@@ -1,0 +1,196 @@
+// Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
+//
+// Waybar modules configuration
+
+{
+  // workspaces
+  "wlr/workspaces": {
+      "format": "{icon}",
+      "on-click": "activate",
+      "format-icons": {
+          "1": "",
+          "2": "",
+          "3": "",
+          "4": "",
+          "5": "",
+          "6": "",
+          "7": "",
+          "8": "",
+          "urgent": "{icon}",
+          "active": "{icon}",
+          "default": "{icon}",
+        },
+    },
+
+	// waybar-backlight
+    "backlight": {
+		"interval": 2,
+        //"device": "amdgpu_bl0",
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", "", "", ""],
+		// Commands to execute on events
+        "on-scroll-up": "light -A 5%",
+        "on-scroll-down": "light -U 5%",
+        "smooth-scrolling-threshold": 1,
+    },
+    "backlight#2": {
+		"interval": 2,
+        //"device": "amdgpu_bl0",
+        "format": "{percent}%",
+		// Commands to execute on events
+        "on-scroll-up": "light -A 5%",
+        "on-scroll-down": "light -U 5%",
+        "smooth-scrolling-threshold": 1,
+    },
+
+	// waybar-battery
+    "battery": {
+		"interval": 60,
+		//"bat": "BAT1",
+		//"adapter": "ACAD",
+		"full-at": 100,
+		"design-capacity": false,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-charging": "",
+        "format-plugged": "ﮣ",
+        "format-full": "",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "format-time": "{H}h {M}min",
+        "tooltip": true,
+    },
+    "battery#2": {
+		"interval": 60,
+		//"bat": "BAT1",
+		//"adapter": "ACAD",
+		"full-at": 100,
+		"design-capacity": false,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}%",
+        "format-charging": "{capacity}%",
+        "format-plugged": "{capacity}%",
+        "format-full": "Full",
+        "format-alt": "{time}",
+        "format-time": "{H}h {M}min",
+        "tooltip": true,
+    },
+
+	// waybar-clock
+    "clock": {
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "",
+    },
+    "clock#2": {
+		"interval": 60,
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%a %b %d, %G}"
+    },
+
+	// waybar-cpu
+    "cpu": {
+         "interval": 5,
+         "format": "",
+    },
+    "cpu#2": {
+         "interval": 5,
+         "format": "{usage}%",
+    },
+           
+	// waybar-custom
+    "custom/menu": {
+         "format": "",
+         "tooltip": false,
+         "on-click": "$HOME/.config/hypr/scripts/menu",
+    },
+
+    "custom/power": {
+         "format": "襤",
+         "tooltip": false,
+         "on-click": "$HOME/.config/hypr/scripts/wlogout",
+    },
+
+	// waybar-disk
+    "disk": {
+         "interval": 30,
+         "format": "",
+    },           	
+    "disk#2": {
+         "interval": 30,
+         "format": "{free}",
+    },           	
+	
+	// waybar-memory
+    "memory": {
+         "interval": 10,
+         "format": "",
+    },
+    "memory#2": {
+         "interval": 10,
+         "format": "{used:0.1f}G",
+    },
+           
+
+	// waybar-network
+    "network": {
+		"interval": 5,
+        //"interface": "wlan*", // (Optional) To force the use of this interface, set it for netspeed to work
+        "format-wifi": "直",
+        "format-ethernet": "",
+        "format-linked": "",
+        "format-disconnected": "睊",
+        "format-disabled": "睊",
+        "tooltip-format": " {ifname} via {gwaddr}",
+        "on-click": "[[ ! `pidof nm-connection-editor` ]] && nm-connection-editor || pkill nm-connection-e",
+    },
+    "network#2": {
+		"interval": 5,
+        //"interface": "wlan*", // (Optional) To force the use of this interface, set it for netspeed to work
+        "format-wifi": "{essid}",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected",
+        "format-disabled": "Disabled",
+        "format-alt": " {bandwidthUpBits} |  {bandwidthDownBits}",
+        "tooltip-format": " {ifname} via {gwaddr}",
+    },
+
+	// waybar-pulseaudio
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        //"format": "{icon}",
+        "format-muted": "",
+        "format-bluetooth": "",
+        "format-bluetooth-muted": "",
+        "format-source": "",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "ﳌ",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "scroll-step": 5.0,
+		// Commands to execute on events
+        "on-click": "amixer set Master toggle",
+        "on-click-right": "pavucontrol",
+        "smooth-scrolling-threshold": 1,
+    },
+
+	// waybar-tray
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    }
+}
