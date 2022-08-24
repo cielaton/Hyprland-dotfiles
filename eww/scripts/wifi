@@ -1,17 +1,17 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-status=$(nmcli g | grep -oE "disconnected")
-essid=$(iw wlan0 info | grep ssid)
+status=$(connmanctl state | grep State | awk '{print $3}')
+essid=$(connmanctl services | grep "[*]A\w" | awk '{$NF="" ; $1="" ; print}')
 
-if [ "$status" ]; then
-	icon=""
+if [ "$status" == "idle" ]; then
+	icon=""
 	text=""
 	col="#575268"
 
 else
-	icon=""
+	icon=""
 	text="${essid}"
-	col="#a1bdce"
+	col="#e48aff"
 fi
 
 if [[ "$1" == "--COL" ]]; then
