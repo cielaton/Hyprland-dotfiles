@@ -9,7 +9,6 @@ Created by saimoom **/
 /** General **/
 .bar_class {
   background-color: #1e2127;
-  border-radius: 12px;
 }
 .module {
   margin: 0px 0px 0px 0px;
@@ -73,24 +72,24 @@ tooltip label {
 .brightbar trough highlight {
   background-image: linear-gradient(
     to right,
-    #e4c9af 30%,
-    #f2cdcd 50%,
-    #e0b089 100% * 50
+    #e5c07b 30%,
+    #ffd68a 50%,
+    #ffe3b0 100%
   );
   border-radius: 10px;
 }
 .volbar trough highlight {
   background-image: linear-gradient(
     to right,
-    #afcee0 30%,
-    #a1bdce 50%,
-    #77a5bf 100% * 50
+    #61afef 30%,
+    #69bbff 50%,
+    #c3e2fb 100% * 50
   );
   border-radius: 10px;
 }
 .volume_icon {
   font-size: 22;
-  color: #a1bdce;
+  color: #69bbff;
   margin: 0px 8px 0px 10px;
 }
 
@@ -98,7 +97,7 @@ tooltip label {
   padding: 2px 5px 2px 5px;
   margin: 10px 0px 10px 10px;
   border-radius: 5;
-  background-color: #a1bdce;
+  background-color: #69bbff;
   font-size: 12;
   color: black;
 }
@@ -109,7 +108,7 @@ tooltip label {
   margin: 0px 10px 0px 0px;
 }
 .module-wif {
-  font-size: 22;
+  font-size: 25;
   color: #a1bdce;
   border-radius: 100%;
   margin: 0px 10px 0px 5px;
@@ -134,12 +133,12 @@ tooltip label {
 
 .brightness_icon {
   font-size: 22;
-  color: #e4c9af;
+  color: #ffd68a;
   margin: 0px 10px 0px 10px;
 }
 
 .brightness_text {
-  background-color: #e4c9af;
+  background-color: #ffd68a;
   padding: 2px 5px 2px 5px;
   margin: 10px 0px 10px 15px;
   border-radius: 5;

@@ -1,26 +1,22 @@
 ;; Variables
 (defpoll clock_time 
-         :interval "5m" "date +\%I")
+         :interval "1m" "date +\%I")
 (defpoll clock_minute 
-         :interval "5s" "date +\%M")
+         :interval "1s" "date +\%M")
 (defpoll clock_date 
          :interval "10h" "date '+%d/%m'")
-(defpoll volume_percent 
-         :interval "3s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
-(defpoll mic_percent 
-         :interval "3s" "amixer -D pulse sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
-(defpoll brightness_percent 
-         :interval "3s" "light '%'")
+(deflisten volume_percent 
+           :initial "0"
+           'tail -F ./deflisten_condition/volume')
+(deflisten brightness_percent 
+           :initial "light '%'"
+           `tail -F ./deflisten_condition/brightness`)
 (defpoll battery 
          :interval "15s" "./scripts/battery --bat")
 (defpoll battery_status 
          :interval "1m" "./scripts/battery --bat-st")
 (defpoll memory 
-         :interval "15s" "scripts/memory")
-(defpoll memory_used_mb 
-         :interval "2m" "scripts/mem-ad used")
-(defpoll memory_total_mb 
-         :interval "2m" "scripts/mem-ad total")
+         :interval "5s" "scripts/memory")
 (defpoll memory_free_mb 
          :interval "2m" "scripts/mem-ad free")
 (defpoll thermal 
@@ -152,7 +148,7 @@
 			            :tooltip "${volume_percent}%"
 			            :max 100
 			            :min 0
-			            :onchange "amixer -D pulse sset Master {}%" )
+			            :onchange "amixer -D pulse sset Master {}% && amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print \$2 }' | tr -d '%' >> \"\$HOME\"/.config/eww/deflisten_condition/volume" )
            ))
 
 (defwidget bright []
@@ -171,7 +167,7 @@
 			            :tooltip "${brightness_percent}%"
 			            :max 100
 			            :min 0
-			            :onchange "light -S {}%" )
+			            :onchange "light -S {}% && printf \"%.0f\\\n\" \"\$(light)\" >>\"\$HOME\"/.config/eww/deflisten_condition/brightness" )
            ))
 
 (defwidget left []
@@ -218,8 +214,8 @@
 
 (defwindow bar :monitor 0
                :geometry (geometry :x "0%"
-                                   :y "10px"
-                                   :width "99%"
+                                   :y "0"
+                                   :width "100%"
                                    :height "30px"
                                    :anchor "top center")
                :stacking "fg"
@@ -241,81 +237,4 @@
 						                            :width "270px" 
 						                            :height "60px")
                     (cal))
-
-(defwidget audio []
-	         (box :class "audio-box" 
-                :orientation "v" 
-                :space-evenly "false" 
-                :vexpand "false" 
-                :hexpand "false"
-	         (box :halign "v" 
-                :space-evenly "false" 
-                :hexpand "false" 
-                :vexpand "false"
-	         (box :class "speaker_icon" 
-                :orientation "v")
-	         (box :orientation "v" 
-                :halign "center" 
-                :vexpand "false" 
-                :hexpand "false"
-           (label :class "speaker_text" 
-                  :text "speaker" 
-                  :valign "center" 
-                  :halign "left" )
-	         (box :class "speaker_bar" 
-                :halign "center" 
-                :vexpand "false" 
-                :hexpand "false"
-	         (scale :value volume_percent
-                  :space-evenly "false"
-			            :orientation "h"
-			            :onchange "amixer -D pulse sset Master {}%" 
-                  :tooltip "volume on ${volume_percent}%"
-			            :max 100
-			            :min 0))))
-           (label :text "" 
-                  :class "audio_sep" 
-                  :halign "center")
-	         (box :halign "v" 
-                :space-evenly "false" 
-                :hexpand "false" 
-                :vexpand "false"
-	         (box :class "mic_icon" 
-                :orientation "v")
-	         (box :orientation "v" 
-                :halign "center" 
-                :vexpand "false" 
-                :hexpand "false"
-           (label :class "mic_text" 
-                  :text "mic" 
-                  :valign "center" 
-                  :halign "left" )
-	         (box :class "mic_bar" 
-                :halign "center" 
-                :vexpand "false" 
-                :hexpand "false"
-	         (scale :value mic_percent
-                  :space-evenly "false"
-			            :orientation "h"
-                  :tooltip "mic on ${mic_percent}%"
-			            :onchange "amixer -D pulse sset Capture {}%" 
-			            :max 100
-			            :min 0))))))
-
-(defwindow audio_ctl :monitor 0
-	                   :geometry (geometry :x "11px" 
-						                             :y "1%" 
-                                         :anchor "top right"
-						                             :width "280px" 
-						                             :height "60px")
-           (audio))
-
-
-(defwindow system :monitor 0
-	                :geometry (geometry :x "11px" 
-						                          :y "1%" 
-                                      :anchor "top right"
-						                          :width "290px" 
-						                          :height "120px")
-           (system))
 

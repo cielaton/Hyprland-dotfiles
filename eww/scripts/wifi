@@ -9,7 +9,7 @@ if [ "$status" == "idle" ]; then
 	col="#575268"
 
 else
-	icon=""
+	icon=""
 	text="${essid}"
 	col="#e48aff"
 fi
