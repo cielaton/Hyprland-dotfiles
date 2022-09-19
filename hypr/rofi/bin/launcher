@@ -5,11 +5,4 @@
 
 DIR="$HOME/.config/hypr"
 
-rofi \
-	-show drun \
-	-modi run,drun -no-lazy-grab \
-	-scroll-method 0 \
-	-drun-match-fields all \
-	-drun-display-format "{name}" \
-	-no-drun-show-actions \
-	-theme "$DIR"/rofi/themes/launcher.rasi
+rofi -show drun -modi run,drun,filebrowser -theme "$DIR"/rofi/themes/launcher.rasi
