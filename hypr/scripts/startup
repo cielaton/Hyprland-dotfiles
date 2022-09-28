@@ -31,5 +31,5 @@ eww open bar
 fcitx5
 
 # Clean eww defliten files
-cat /dev/null >"$HOME"/.config/eww/deflisten_condition/brightness
-cat /dev/null >"$HOME"/.config/eww/deflisten_condition/volume
+ echo 0 >"$HOME"/.config/eww/deflisten_condition/brightness
+ echo 0 >"$HOME"/.config/eww/deflisten_condition/volume

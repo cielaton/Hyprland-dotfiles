@@ -10,8 +10,8 @@ uptime=$(uptime -p | sed -e 's/up //g')
 # Options
 shutdown=""
 reboot=""
-lock=""
-screenoff=""
+powersaving=""
+screenoff=""
 logout=""
 
 # Get user confirmation
@@ -28,14 +28,14 @@ show_msg() {
 }
 
 # Variable passed to rofi
-options="$shutdown\n$reboot\n$lock\n$screenoff\n$logout"
+options="$shutdown\n$reboot\n$powersaving\n$screenoff\n$logout"
 
 chosen="$(echo -e "$options" | $rofi_command -p "UP - $uptime" -dmenu -selected-row 2)"
 case $chosen in
 "$shutdown")
 	ans=$(get_confirmation &)
 	if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
-		loginctl poweroff
+		systemctl poweroff
 	elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
 		exit
 	else
@@ -45,22 +45,29 @@ case $chosen in
 "$reboot")
 	ans=$(get_confirmation &)
 	if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
-		loginctl reboot
+		systemctl reboot
 	elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
 		exit
 	else
 		show_msg
 	fi
 	;;
-"$lock")
-	source /home/kiet/.config/hypr/rofi/bin/lockscreen
-	loginctl suspend
+"$powersaving")
+	ans=$(get_confirmation &)
+	if [[ $ans == "yes" || $ans == "YES" || $ans == "y" ]]; then
+		source /home/kiet/.config/hypr/rofi/bin/lockscreen
+		systemctl suspend
+	elif [[ $ans == "no" || $ans == "NO" || $ans == "n" ]]; then
+		exit
+	else
+		show_msg
+	fi
 	;;
 "$screenoff")
 	ans=$(get_confirmation &)
 	if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
-		hyprctl dispatch dpms off
 		source /home/kiet/.config/hypr/rofi/bin/lockscreen
+		hyprctl dispatch dpms off
 	elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
 		exit
 	else

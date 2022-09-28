@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-status=$(connmanctl state | grep State | awk '{print $3}')
-essid=$(connmanctl services | grep "[*]A\w" | awk '{$NF="" ; $1="" ; print}')
+status=$(nmcli g | grep -o "disconnected")
+essid=$(nmcli c | grep "wlp5s0" | awk '{for (i=0;i<=2;i++) $(NF-i)="";print}')
 
-if [ "$status" == "idle" ]; then
+if [ "$status" == "disconnected" ]; then
 	icon=""
 	text=""
 	col="#575268"

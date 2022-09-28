@@ -3,7 +3,7 @@
 
 configuration {
     font:                           "JetBrains Mono Medium 10";
-    show-icons:                     false;
+    show-icons:                     true;
     display-drun: 					"";
     drun-display-format:            "{icon} {name}";
     disable-history:                false;

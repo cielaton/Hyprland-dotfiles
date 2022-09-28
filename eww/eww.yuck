@@ -1,6 +1,6 @@
 ;; Variables
 (defpoll clock_time 
-         :interval "1m" "date +\%I")
+         :interval "30s" "date +\%I")
 (defpoll clock_minute 
          :interval "1s" "date +\%M")
 (defpoll clock_date 
@@ -11,23 +11,12 @@
 (deflisten brightness_percent 
            :initial "light '%'"
            `tail -F ./deflisten_condition/brightness`)
-(defpoll battery 
-         :interval "15s" "./scripts/battery --bat")
-(defpoll battery_status 
-         :interval "1m" "./scripts/battery --bat-st")
-(defpoll memory 
-         :interval "5s" "scripts/memory")
-(defpoll memory_free_mb 
-         :interval "2m" "scripts/mem-ad free")
 (defpoll thermal 
          :interval "10s" "scripts/thermal")
-(defpoll cpu
-         :interval "10s" "scripts/cpu")
 (defvar time_rev false)
 (deflisten workspace "scripts/workspace")
 
 (defvar eww "eww -c $HOME/.config/eww")
-
 
 (defpoll COL_WLAN 
          :interval "1m" "~/.config/eww/scripts/wifi --COL")
@@ -67,31 +56,30 @@
            (label :class "icon_bat"
                   :text "")
            (label :class "text_bat"
-                  :text "${battery}%")
-           ))
+                  :text "${EWW_BATTERY["BAT1"].capacity}%"
+             )))
 
 (defwidget cpu []
            (box :class "cpu_module"
                 :vexpand "false"
                 :hexpand "false"
-           (circular-progress :value cpu
+           (circular-progress :value {EWW_CPU.avg}
                               :class "cpubar"
                               :thickness 4
            (label :class "iconcpu"
-                  :tooltip "${cpu}%"
-                  :text ""))))
+                  :tooltip "${round(EWW_CPU.avg, 1)}%"
+                  :text "")))) 
 
 (defwidget mem []
 		       (box :class "mem_module" 
                 :vexpand "false" 
                 :hexpand "false" 
-           (circular-progress :value memory
+           (circular-progress :value {EWW_RAM.used_mem_perc}
                               :class "membar"
                               :thickness 4
            (button :class "iconmem"
                    :limit-width 2
-                   :tooltip "using ${memory}% ram"
-                   :onclick "$HOME/.config/eww/scripts/pop system"
+                   :tooltip "using ${round(EWW_RAM.used_mem_perc, 1)}% ram"
                    :show_truncated false
                    :wrap false
                    ""))))
