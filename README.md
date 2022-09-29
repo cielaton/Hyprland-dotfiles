@@ -1,6 +1,6 @@
 # Hyprland-dotfiles
 <br>
-<h3 align = "center">My customized Waylad desktop on Artix linux - Openrc</h3>
+<h3 align = "center">My customized Waylad desktop on Archlinux</h3>
 <br>
 <img src="https://github.com/kartorias1/Hyprland-dotfiles/blob/main/Screenshot_2022-09-16-22-24-36_1920x1080.png" alt="">
 
