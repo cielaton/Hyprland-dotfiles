@@ -1,8 +1,11 @@
 # Hyprland-dotfiles
 <br>
-<h3 align = "center">My customized Waylad desktop on Archlinux</h3>
+<h3 align = "center">My customized Wayland desktop on Archlinux</h3>
 <br>
-<img src="https://github.com/kartorias1/Hyprland-dotfiles/blob/main/Screenshot_2022-09-16-22-24-36_1920x1080.png" alt="">
+
+| Dwindle | Floating |
+| -------- | ------- |
+| <img src="https://github.com/kartorias1/Hyprland-dotfiles/blob/main/screenshots/Screenshot_2022-10-01-09-26-03_1920x1080.png" alt=""> | <img src="https://github.com/kartorias1/Hyprland-dotfiles/blob/main/screenshots/Screenshot_2022-10-01-09-23-15_1920x1080.png" alt=""> |
 
 ## Components:
 - Terminal: [`kitty`](https://github.com/kovidgoyal/kitty)
