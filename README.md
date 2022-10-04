@@ -9,7 +9,8 @@
 
 ## Components:
 - Terminal: [`kitty`](https://github.com/kovidgoyal/kitty)
-- Editor: [`nvchad`](https://github.com/NvChad/NvChad)
+- Prompt: [`Starship`](https://starship.rs/)
+- Editor: [`NvChad`](https://github.com/NvChad/NvChad)
 - Status bar: [`eww`](https://github.com/elkowar/eww)
 - Menu : [`rofi`](https://github.com/lbonn/rofi) (Include `launcher`, `powermenu`, `screenshots`, ...)
   > Note that this is the Wayland compatible version of Rofi.
