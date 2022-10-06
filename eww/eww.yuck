@@ -13,7 +13,8 @@
            `tail -F ./deflisten_condition/brightness`)
 (defpoll thermal 
          :interval "10s" "scripts/thermal")
-(defvar time_rev false)
+(defvar time_rev_clock false)
+(defvar time_rev_wifi false)
 (deflisten workspace "scripts/workspace")
 
 (defvar eww "eww -c $HOME/.config/eww")
@@ -33,40 +34,52 @@
 ;; widgets
 
 (defwidget wifi [] 
+           (eventbox :onhover "${eww} update time_rev_wifi=true"
+			               :onhoverlost "${eww} update time_rev_wifi=false"
            (box :vexpand "false" 
                 :hexpand "false" 
                 :space-evenly "false"
-	         (button :class "module-wif" 
+	         (button :class "module-wifi" 
                    :wrap "false" 
                    :limit-width 12 
                    :style "color: ${COL_WLAN};" WLAN_ICON)
-           (label    :class "module_essid"
-			               :text ESSID_WLAN
-			               :orientation "h"
-)))
+           (revealer :transition "slideleft"
+                     :reveal time_rev_wifi
+                     :duration "300ms"
+           (label :class "module_essid"
+                  :text ESSID_WLAN
+                  :orientation "h"
+)))))
 
 
 (defwidget workspaces []
            (literal :content workspace))
 
-(defwidget bat []
-		       (box :class "bat_module" 
-                :vexpand "false" 
-                :hexpand "false" 
+(defwidget icon_bat []
+           (overlay    
+           (box
+                :class "icon_bat_fake_background"
+                :width 38
+           )
            (label :class "icon_bat"
-                  :text "")
+                  :text ""
+                  :hexpand false
+           )))
+
+(defwidget text_bat []
            (label :class "text_bat"
                   :text "${EWW_BATTERY["BAT1"].capacity}%"
-             )))
+                  :hexpand false
+           ))
 
 (defwidget cpu []
            (box :class "cpu_module"
                 :vexpand "false"
                 :hexpand "false"
            (circular-progress :value {EWW_CPU.avg}
-                              :class "cpubar"
-                              :thickness 4
-           (label :class "iconcpu"
+                              :class "cpu_bar"
+                              :thickness 5
+           (label :class "icon_cpu"
                   :tooltip "${round(EWW_CPU.avg, 1)}%"
                   :text "")))) 
 
@@ -75,9 +88,9 @@
                 :vexpand "false" 
                 :hexpand "false" 
            (circular-progress :value {EWW_RAM.used_mem_perc}
-                              :class "membar"
-                              :thickness 4
-           (button :class "iconmem"
+                              :class "mem_bar"
+                              :thickness 5
+           (button :class "icon_mem"
                    :limit-width 2
                    :tooltip "using ${round(EWW_RAM.used_mem_perc, 1)}% ram"
                    :show_truncated false
@@ -88,11 +101,11 @@
                 :vexpand "false"
                 :hexpand "false"
            (circular-progress :value thermal
-                              :class "thermbar"
-                              :thickness 4
-           (label  :class "icontherm"
+                              :class "therm_bar"
+                              :thickness 5
+           (label  :class "icon_therm"
                    :tooltip "${thermal}°C"
-                   :text ""))))
+                   :text ""))))
 
 (defwidget sep []
            (box :class "module-2" 
@@ -102,9 +115,9 @@
                   :text "|")))
 
 (defwidget clock_module []
-           (eventbox :onhover "${eww} update time_rev=true"
-			               :onhoverlost "${eww} update time_rev=false"
-           (box :class "module" 
+           (eventbox :onhover "${eww} update time_rev_clock=true"
+			               :onhoverlost "${eww} update time_rev_clock=false"
+           (box :class "clock_module" 
                 :space-evenly "false" 
                 :orientation "h" 
                 :spacing "3" 
@@ -115,7 +128,7 @@
            (label :text clock_minute 
                   :class "clock_minute_class")
 	         (revealer :transition "slideleft"
-			               :reveal time_rev
+			               :reveal time_rev_clock
 			               :duration "350ms"
            (button :class "clock_date_class"
                    :onclick "$HOME/.config/eww/scripts/pop calendar" clock_date
@@ -128,8 +141,8 @@
                 :spacing "3" 
            (label :text "${volume_percent}%" 
                   :class "volume_text")
-	         (button :onclick "scripts/pop audio"   
-                   :class "volume_icon" "")
+	         (button :onclick "echo 0 >> ./deflisten_condition/volume"
+                   :class "volume_icon" "")
 	         (scale :class "volbar"
 			            :value volume_percent
 			            :orientation "h"
@@ -146,8 +159,8 @@
                 :spacing "3" 
            (label :text "${brightness_percent}%" 
                   :class "brightness_text")
-           (label :text "" 
-                  :class "brightness_icon" 
+           (label :text "" 
+                  :class "icon_brightness" 
                   :tooltip "brightness")
 	         (scale :class "brightbar"
 			            :value brightness_percent
@@ -181,7 +194,8 @@
            (sep)
            (volume)
            (sep)
-           (bat)
+           (icon_bat)
+           (text_bat)
            ))
 
 

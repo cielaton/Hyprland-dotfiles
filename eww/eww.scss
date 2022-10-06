@@ -1,16 +1,14 @@
-/** EWW.SCSS
-Created by saimoom **/
 * {
   all: unset;
-  font-family: feather;
   font-family: DaddyTimeMono NF;
+  font-family: icomoon;
 }
 
 /** General **/
 .bar_class {
   background-color: #1e2127;
 }
-.module {
+.clock_module {
   margin: 0px 0px 0px 0px;
   border-radius: 10px 16px 0px 10px;
 }
@@ -54,20 +52,20 @@ tooltip label {
   margin: 0px 5px 0px 0px;
 }
 
-.membar {
+.mem_bar {
+  margin: 5px 0px 5px 0px;
   color: #e5c07b;
   background-color: #38384d;
-  border-radius: 10px;
 }
-.thermbar {
+.therm_bar {
+  margin: 5px 0px 5px 0px;
   color: #69bbff;
   background-color: #38384d;
-  border-radius: 10px;
 }
-.cpubar {
+.cpu_bar {
+  margin: 5px 0px 5px 0px;
   color: #b5e890;
   background-color: #38384d;
-  border-radius: 10px;
 }
 .brightbar trough highlight {
   background-image: linear-gradient(
@@ -107,31 +105,54 @@ tooltip label {
   color: #e48aff;
   margin: 0px 10px 0px 0px;
 }
-.module-wif {
-  font-size: 25;
+.module-wifi {
+  font-size: 22;
   color: #a1bdce;
   border-radius: 100%;
   margin: 0px 10px 0px 5px;
 }
 
-.iconmem {
+.icon_bat {
+  margin: 10px 0px;
+  padding: 3px 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  color: #2b3332;
+  background-color: #66d9e8;
+}
+
+.icon_bat_fake_background {
+  margin: 10px 0px;
+  background-color: #3c414a;
+}
+
+.text_bat {
+  margin: 10px 0px 10px 0px;
+  padding: 3px 8px;
+  border-radius: 0px 5px 5px 0px;
+  font-size: 14px;
+  color: #66d9e8;
+  background-color: #3c414a;
+}
+
+.icon_mem {
   color: #ffd68a;
 }
-.iconcpu {
+.icon_cpu {
   color: #b5e890;
 }
 
-.icontherm {
+.icon_therm {
   color: #69bbff;
 }
-.iconcpu,
-.icontherm,
-.iconmem {
-  font-size: 20;
-  margin: 12px;
+.icon_cpu,
+.icon_therm,
+.icon_mem {
+  font-size: 12px;
+  margin: 10px;
 }
 
-.brightness_icon {
+.icon_brightness {
   font-size: 22;
   color: #ffd68a;
   margin: 0px 10px 0px 10px;
@@ -149,7 +170,7 @@ tooltip label {
 .separ {
   color: #3e424f;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 25px;
   margin: 0px 8px 0px 8px;
 }
 
@@ -157,18 +178,8 @@ tooltip label {
   margin: 0px 10px 0px 3px;
 }
 .bat_module {
-  background-color: #3c414a;
-  border-radius: 8px;
   padding: 0px 10px 0px 0px;
   margin: 8px 10px 8px 10px;
-}
-.icon_bat {
-  font-size: 14;
-  color: #66d9e8;
-}
-.text_bat {
-  font-size: 14px;
-  color: #66d9e8;
 }
 
 .therm_module {
@@ -202,7 +213,8 @@ scale trough {
 .w44,
 .w55,
 .w66 {
-  font-size: 27;
+  font-size: 15;
+  margin: 10px 0px 0px 0px;
 }
 
 /* Unoccupied */
@@ -233,6 +245,7 @@ scale trough {
 /* Focused */
 @for $i from 1 through 6 {
   .w#{$i}#{$i} {
+    padding: 0px 0px 5px 0px;
     border-style: none none solid;
     border-width: 2px;
     @extend .w#{$i};
@@ -240,34 +253,6 @@ scale trough {
   }
 }
 
-.song_cover_art {
-  background-size: cover;
-  background-position: center;
-  min-height: 24px;
-  min-width: 24px;
-  margin: 10px;
-  border-radius: 100px;
-}
-
-.song {
-  color: #a1bdce;
-  font-size: 18px;
-  font-weight: bold;
-  margin: 3px 5px 0px 0px;
-}
-
-.song_btn_play {
-  color: #a1bdce;
-  font-size: 28px;
-  margin: 3px 0px 0px 5px;
-}
-
-.song_btn_prev,
-.song_btn_next {
-  color: #bfc9db;
-  font-size: 24px;
-  margin: 3px 0px 0px 5px;
-}
 // Calendar
 .cal {
   background-color: #0f0f17;

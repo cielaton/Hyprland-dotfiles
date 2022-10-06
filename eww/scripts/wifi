@@ -4,12 +4,12 @@ status=$(nmcli g | grep -o "disconnected")
 essid=$(nmcli c | grep "wlp5s0" | awk '{for (i=0;i<=2;i++) $(NF-i)="";print}')
 
 if [ "$status" == "disconnected" ]; then
-	icon=""
+	icon=""
 	text=""
 	col="#575268"
 
 else
-	icon=""
+	icon=""
 	text="${essid}"
 	col="#e48aff"
 fi
