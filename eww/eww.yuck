@@ -5,20 +5,22 @@
          :interval "1s" "date +\%M")
 (defpoll clock_date 
          :interval "10h" "date '+%d/%m'")
+(defvar time_rev_clock false)
+
+(defvar preceding_volume_value 0)
+(defvar volume_state true) 
 (deflisten volume_percent 
            :initial "0"
            'tail -F ./deflisten_condition/volume')
+
 (deflisten brightness_percent 
            :initial "light '%'"
            `tail -F ./deflisten_condition/brightness`)
+
 (defpoll thermal 
          :interval "10s" "scripts/thermal")
-(defvar time_rev_clock false)
+
 (defvar time_rev_wifi false)
-(deflisten workspace "scripts/workspace")
-
-(defvar eww "eww -c $HOME/.config/eww")
-
 (defpoll COL_WLAN 
          :interval "1m" "~/.config/eww/scripts/wifi --COL")
 (defpoll ESSID_WLAN 
@@ -26,6 +28,8 @@
 (defpoll WLAN_ICON 
          :interval "1m" "~/.config/eww/scripts/wifi --ICON")
 
+(deflisten workspace "scripts/workspace")
+ 
 (defpoll calendar_day 
          :interval "20h" "date '+%d'")
 (defpoll calendar_year 
@@ -34,8 +38,8 @@
 ;; widgets
 
 (defwidget wifi [] 
-           (eventbox :onhover "${eww} update time_rev_wifi=true"
-			               :onhoverlost "${eww} update time_rev_wifi=false"
+           (eventbox :onhover "${EWW_CMD} update time_rev_wifi=true"
+			               :onhoverlost "${EWW_CMD} update time_rev_wifi=false"
            (box :vexpand "false" 
                 :hexpand "false" 
                 :space-evenly "false"
@@ -149,15 +153,15 @@
                 :spacing "3" 
            (label :text "${volume_percent}%" 
                   :class "volume_text")
-	         (button :onclick "echo 0 >> ./deflisten_condition/volume"
-                   :class "volume_icon" "")
+	         (button :onclick {volume_state ? "./scripts/volume mute" : "./scripts/volume unmute && echo ${preceding_volume_value} >> ./deflisten_condition/volume" }
+                   :class "icon_volume" {volume_state ? "" : ""})
 	         (scale :class "volbar"
 			            :value volume_percent
 			            :orientation "h"
 			            :tooltip "${volume_percent}%"
 			            :max 100
 			            :min 0
-			            :onchange "amixer -D pulse sset Master {}% && amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print \$2 }' | tr -d '%' >> \"\$HOME\"/.config/eww/deflisten_condition/volume" )
+			            :onchange "amixer -D pulse sset Master {}% && amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ if ($2+0 < 10) {print 0$2} else {print $2}}' | tr -d '%' >> \"\$HOME\"/.config/eww/deflisten_condition/volume" )
            ))
 
 (defwidget bright []
@@ -176,7 +180,7 @@
 			            :tooltip "${brightness_percent}%"
 			            :max 100
 			            :min 0
-			            :onchange "light -S {}% && printf \"%.0f\\\n\" \"\$(light)\" >>\"\$HOME\"/.config/eww/deflisten_condition/brightness" )
+			            :onchange "light -S {}% && printf \"%.0f\\\n\" \"$(light)\" | awk '{if ($1+0 < 10) {print 0$1} else {print $1}}' >>\"$HOME\"/.config/eww/deflisten_condition/brightness" )
            ))
 
 (defwidget left []
