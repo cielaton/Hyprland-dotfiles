@@ -45,7 +45,7 @@
                    :style "color: ${COL_WLAN};" WLAN_ICON)
            (revealer :transition "slideleft"
                      :reveal time_rev_wifi
-                     :duration "300ms"
+                     :duration "500ms"
            (label :class "module_essid"
                   :text ESSID_WLAN
                   :orientation "h"
@@ -114,25 +114,33 @@
            (label :class "separ" 
                   :text "|")))
 
+(defwidget clock_icon []
+           (overlay
+           (box :class "icon_clock_fake_background"
+                :width 36
+           )
+           (label :text ""
+                  :class "icon_clock"
+                  :hexpand false
+     )))
+
 (defwidget clock_module []
-           (eventbox :onhover "${eww} update time_rev_clock=true"
-			               :onhoverlost "${eww} update time_rev_clock=false"
            (box :class "clock_module" 
                 :space-evenly "false" 
                 :orientation "h" 
                 :spacing "3" 
            (label :text clock_time 
                   :class "clock_time_class" )
-           (label :text "" 
+           (label :text ":" 
                   :class "clock_time_sep" )
            (label :text clock_minute 
                   :class "clock_minute_class")
-	         (revealer :transition "slideleft"
-			               :reveal time_rev_clock
-			               :duration "350ms"
-           (button :class "clock_date_class"
+           ))
+
+(defwidget clock_calendar []
+           (button :class "clock_calendar"
                    :onclick "$HOME/.config/eww/scripts/pop calendar" clock_date
-           )))))
+           ))
   
 (defwidget volume []
            (box :class "module-2" 
@@ -182,7 +190,10 @@
            (cpu)
            (thermal)
            (sep)
-           (clock_module)))
+           (clock_icon)
+           (clock_module)
+           (clock_calendar)
+           ))
 
 
 (defwidget right []

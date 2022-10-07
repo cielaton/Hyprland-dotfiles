@@ -1,3 +1,30 @@
+/* Defined colors */
+$black: #454c59;
+$black-darker: #282c34;
+
+$red: #ff7a85;
+$red-darker: #e06c75;
+
+$green: #b5e890;
+$green-darker: #98c379;
+
+$yellow: #ffd68a;
+$yellow-darker: #e5c07b;
+
+$blue: #69bbff;
+$blue-darker: #61afef;
+
+$magenta: #e48aff;
+$magenta-darker: #c678dd;
+
+$cyan: #66d9e8;
+$cyan-darker: #56b6c2;
+
+$white: #cfd7e6;
+$white-darker: #abb2bf;
+
+$element-background-color: #38384d;
+
 * {
   all: unset;
   font-family: DaddyTimeMono NF;
@@ -7,10 +34,6 @@
 /** General **/
 .bar_class {
   background-color: #1e2127;
-}
-.clock_module {
-  margin: 0px 0px 0px 0px;
-  border-radius: 10px 16px 0px 10px;
 }
 
 /** tooltip!! **/
@@ -27,22 +50,41 @@ tooltip label {
 
 /** Widgets **/
 
+.icon_clock {
+  color: $black-darker;
+  font-size: 16px;
+  margin: 8px 10px 8px 5px;
+  padding: 0px 8px;
+  border-radius: 5px;
+  background-color: $white;
+}
+
+.icon_clock_fake_background {
+  border-radius: 0px;
+  background-color: $element-background-color;
+  margin: 8px 0px 8px 5px;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.clock_module {
+  background-color: $element-background-color;
+  margin: 8px 0px 8px 0px;
+  padding: 0px 0px 0px 10px;
+  border-radius: 0px 5px 5px 0px;
+}
+
 .clock_time_sep {
-  font-size: 16;
   color: #bfc9db;
   margin: 0px 4px 1px 4px;
 }
 .clock_time_class,
-.clock_minute_class {
-  font-size: 23;
-}
-.clock_date_class {
+.clock_minute_class,
+.clock_time_sep,
+.clock_calendar {
   font-size: 18;
-  margin: 0px 20px 0px -1px;
-  color: #d7beda;
 }
 .clock_minute_class {
-  margin: 0px 20px 0px 3px;
+  margin: 0px 10px 0px 3px;
   color: #bfc9db;
 }
 
@@ -52,26 +94,33 @@ tooltip label {
   margin: 0px 5px 0px 0px;
 }
 
+.clock_calendar {
+  background-color: #2d2d40;
+  margin: 8px 11px 8px 0px;
+  padding: 0px 10px 0px 10px;
+  border-radius: 0px 5px 5px 0px;
+  color: #bfc9db;
+}
 .mem_bar {
   margin: 5px 0px 5px 0px;
-  color: #e5c07b;
-  background-color: #38384d;
+  color: $yellow-darker;
+  background-color: $element-background-color;
 }
 .therm_bar {
   margin: 5px 0px 5px 0px;
-  color: #69bbff;
-  background-color: #38384d;
+  color: $blue-darker;
+  background-color: $element-background-color;
 }
 .cpu_bar {
   margin: 5px 0px 5px 0px;
-  color: #b5e890;
-  background-color: #38384d;
+  color: $green-darker;
+  background-color: $element-background-color;
 }
 .brightbar trough highlight {
   background-image: linear-gradient(
     to right,
-    #e5c07b 30%,
-    #ffd68a 50%,
+    $yellow-darker 30%,
+    $yellow 50%,
     #ffe3b0 100%
   );
   border-radius: 10px;
@@ -79,15 +128,15 @@ tooltip label {
 .volbar trough highlight {
   background-image: linear-gradient(
     to right,
-    #61afef 30%,
-    #69bbff 50%,
+    $blue-darker 30%,
+    $blue 50%,
     #c3e2fb 100% * 50
   );
   border-radius: 10px;
 }
 .volume_icon {
   font-size: 22;
-  color: #69bbff;
+  color: $blue;
   margin: 0px 8px 0px 10px;
 }
 
@@ -95,14 +144,14 @@ tooltip label {
   padding: 2px 5px 2px 5px;
   margin: 10px 0px 10px 10px;
   border-radius: 5;
-  background-color: #69bbff;
+  background-color: $blue;
   font-size: 12;
   color: black;
 }
 
 .module_essid {
   font-size: 18;
-  color: #e48aff;
+  color: $magenta;
   margin: 0px 10px 0px 0px;
 }
 .module-wifi {
@@ -114,11 +163,11 @@ tooltip label {
 
 .icon_bat {
   margin: 10px 0px;
-  padding: 3px 8px;
+  padding: 0px 8px;
   font-size: 14px;
   border-radius: 5px;
   color: #2b3332;
-  background-color: #66d9e8;
+  background-color: $cyan;
 }
 
 .icon_bat_fake_background {
@@ -131,19 +180,19 @@ tooltip label {
   padding: 3px 8px;
   border-radius: 0px 5px 5px 0px;
   font-size: 14px;
-  color: #66d9e8;
+  color: $cyan;
   background-color: #3c414a;
 }
 
 .icon_mem {
-  color: #ffd68a;
+  color: $yellow;
 }
 .icon_cpu {
-  color: #b5e890;
+  color: $green;
 }
 
 .icon_therm {
-  color: #69bbff;
+  color: $blue;
 }
 .icon_cpu,
 .icon_therm,
@@ -154,12 +203,12 @@ tooltip label {
 
 .icon_brightness {
   font-size: 22;
-  color: #ffd68a;
+  color: $yellow;
   margin: 0px 10px 0px 10px;
 }
 
 .brightness_text {
-  background-color: #ffd68a;
+  background-color: $yellow;
   padding: 2px 5px 2px 5px;
   margin: 10px 0px 10px 15px;
   border-radius: 5;
@@ -224,22 +273,22 @@ scale trough {
 
 /* Occupied */
 .w1 {
-  color: #69bbff;
+  color: $blue;
 }
 .w2 {
-  color: #ff7a85;
+  color: $red;
 }
 .w3 {
-  color: #b5e890;
+  color: $green;
 }
 .w4 {
-  color: #ffd68a;
+  color: $yellow;
 }
 .w5 {
-  color: #cfd7e6;
+  color: $white;
 }
 .w6 {
-  color: #e48aff;
+  color: $magenta;
 }
 
 /* Focused */
