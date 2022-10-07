@@ -35,13 +35,13 @@ notify_user() {
 # Increase Volume
 inc_volume() {
 	amixer -Mq set Master,0 5%+ unmute
-	amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%' >>"$HOME"/.config/eww/deflisten_condition/volume
+	amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{if ($2+0 < 10) {print "0"$2} else {print $2}}' | tr -d '%' >>"$HOME"/.config/eww/deflisten_condition/volume
 }
 
 # Decrease Volume
 dec_volume() {
 	amixer -Mq set Master,0 5%- unmute
-	amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%' >>"$HOME"/.config/eww/deflisten_condition/volume
+	amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{if ($2+0 < 10) {print "0"$2} else {print $2}}' | tr -d '%' >>"$HOME"/.config/eww/deflisten_condition/volume
 
 }
 

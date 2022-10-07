@@ -8,11 +8,11 @@ rofi_command="rofi -theme $DIR/rofi/themes/powermenu.rasi"
 uptime=$(uptime -p | sed -e 's/up //g')
 
 # Options
-shutdown=""
-reboot=""
-powersaving=""
-screenoff=""
-logout=""
+shutdown=""
+reboot=""
+powersaving=""
+screenoff=""
+logout=""
 
 # Get user confirmation
 get_confirmation() {

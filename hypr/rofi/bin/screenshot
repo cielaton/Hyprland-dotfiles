@@ -15,9 +15,9 @@ notify_cmd_shot="dunstify -u low --replace=699 -i /usr/share/archcraft/icons/dun
 rofi_command="rofi -theme $DIR/rofi/themes/screenshot.rasi"
 
 # Buttons
-screen=""
-area=""
-infive=""
+screen=""
+area=""
+infive=""
 
 # notify and view screenshot
 notify_view() {

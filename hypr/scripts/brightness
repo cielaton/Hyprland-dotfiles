@@ -37,13 +37,13 @@ notify_user() {
 # Increase brightness
 inc_backlight() {
 	light -A 5
-	printf "%.0f\n" "$(light)" >>"$HOME"/.config/eww/deflisten_condition/brightness
+	printf "%.0f\n" "$(light)" | awk '{if ($1+0 < 10) {print 0$1} else {print $1}}' >>"$HOME"/.config/eww/deflisten_condition/brightness
 }
 
 # Decrease brightness
 dec_backlight() {
 	light -U 5
-	printf "%.0f\n" "$(light)" >>"$HOME"/.config/eww/deflisten_condition/brightness
+	printf "%.0f\n" "$(light)" | awk '{if ($1+0 < 10) {print 0$1} else {print $1}}' >>"$HOME"/.config/eww/deflisten_condition/brightness
 }
 
 # Execute accordingly
