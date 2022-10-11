@@ -44,8 +44,6 @@
                 :hexpand "false" 
                 :space-evenly "false"
 	         (button :class "module-wifi" 
-                   :wrap "false" 
-                   :limit-width 12 
                    :style "color: ${COL_WLAN};" WLAN_ICON)
            (revealer :transition "slideleft"
                      :reveal time_rev_wifi
@@ -129,6 +127,10 @@
      )))
 
 (defwidget clock_module []
+           (overlay
+           (box :class "clock_module_fake_background"
+                :width 95
+           )
            (box :class "clock_module" 
                 :space-evenly "false" 
                 :orientation "h" 
@@ -139,7 +141,7 @@
                   :class "clock_time_sep" )
            (label :text clock_minute 
                   :class "clock_minute_class")
-           ))
+           )))
 
 (defwidget clock_calendar []
            (button :class "clock_calendar"
@@ -183,11 +185,11 @@
 			            :onchange "light -S {}% && printf \"%.0f\\\n\" \"$(light)\" | awk '{if ($1+0 < 10) {print 0$1} else {print $1}}' >>\"$HOME\"/.config/eww/deflisten_condition/brightness" )
            ))
 
-(defwidget left []
+(defwidget right []
 	         (box :orientation "h" 
 		            :space-evenly false  
                 :halign "end"
-		            :class "left_modules"
+		            :class "right_modules"
            (wifi)
            (sep)
            (mem)
@@ -199,12 +201,10 @@
            (clock_calendar)
            ))
 
-
-(defwidget right []
+(defwidget left []
 	         (box :orientation "h" 
 		            :space-evenly false  
-                :halign "start"
-		            :class "right_modules"
+		            :class "left_modules"
            (bright)
            (sep)
            (volume)
@@ -213,20 +213,18 @@
            (text_bat)
            ))
 
-
 (defwidget center []
 	         (box :orientation "h" 
 		            :space-evenly false  
-                :halign "center"
 		            :class "center_modules"
            (workspaces)))
 
 (defwidget bar_1 []
-           (box :class "bar_class"
-                :orientation "h"
-           (right)
-           (center)
+           (centerbox :class "bar_class"
+                      :orientation "h"
            (left)
+           (center)
+           (right)
            ))
 
 (defwindow bar :monitor 0
@@ -238,7 +236,8 @@
                :stacking "fg"
                :windowtype "dock"
                :exclusive "true"
-           (bar_1))
+           (bar_1)
+           )
 
 (defwidget cal []
 	         (box :class "cal" :orientation "v"
@@ -254,4 +253,3 @@
 						                            :width "270px" 
 						                            :height "60px")
                     (cal))
-

@@ -27,7 +27,7 @@ $element-background-color: #38384d;
 
 * {
   all: unset;
-  font-family: DaddyTimeMono NF;
+  font-family: JetBrainsMono Nerd Font;
   font-family: icomoon;
 }
 
@@ -71,6 +71,10 @@ tooltip label {
   margin: 8px 0px 8px 0px;
   padding: 0px 0px 0px 10px;
   border-radius: 0px 5px 5px 0px;
+}
+.clock_module_fake_background {
+  background-color: #2d2d40;
+  margin: 8px 0px 8px 0px;
 }
 
 .clock_time_sep {
@@ -125,7 +129,7 @@ tooltip label {
   );
   border-radius: 10px;
 }
-.volbar trough highlight {
+.volbar highlight {
   background-image: linear-gradient(
     to right,
     $blue-darker 30%,
@@ -153,11 +157,11 @@ tooltip label {
   font-size: 18;
   color: $magenta;
 }
+
 .module-wifi {
   font-size: 22;
   color: #a1bdce;
-  border-radius: 100%;
-  margin: 0px 10px 0px 5px;
+  margin: 0px 10px 0px 0px;
 }
 
 .icon_bat {
@@ -219,7 +223,7 @@ tooltip label {
   color: #3e424f;
   font-weight: bold;
   font-size: 25px;
-  margin: 0px 8px 0px 8px;
+  margin: 0px 10px 4px 10px;
 }
 
 .mem_module {
@@ -294,7 +298,7 @@ scale trough {
 @for $i from 1 through 6 {
   .w#{$i}#{$i} {
     padding: 0px 0px 5px 0px;
-    border-style: none none solid;
+    border-style: none none solid none;
     border-width: 2px;
     @extend .w#{$i};
     border-color: white;

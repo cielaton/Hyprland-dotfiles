@@ -5,7 +5,7 @@ if [[ $1 == "mute" ]]; then
 	eww update volume_state=false &&
 		amixer sset Master mute &&
 		eww update preceding_volume_value="$(tail -n 1 ./deflisten_condition/volume)" &&
-		echo 0 >>./deflisten_condition/volume
+		echo 00 >>./deflisten_condition/volume
 elif [[ $1 == "unmute" ]]; then
 	eww update volume_state=true &&
 		amixer sset Master unmute

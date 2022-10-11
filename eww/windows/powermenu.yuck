@@ -1,0 +1,27 @@
+(defwidget power_button
+           ()         
+  )
+
+(defwidget left_group []
+           (box :class "left_group"
+                :orientation "h"
+                :space-evenly false
+           ))
+
+(defwidget powermenu_widget []
+           (box :class "powermenu"
+                :orientation "h"
+                :space-evenly false
+           ))
+
+
+(defwindow powermenu :monitor 0
+                     :geometry (geometry :x "20%"
+                                         :y "100px"
+                                         :width "250px"
+                                         :height "200px"
+                                         :anchor "center")
+                     :stacking "fg"
+                     :focusable true
+                     ; :wm-ignore
+) 

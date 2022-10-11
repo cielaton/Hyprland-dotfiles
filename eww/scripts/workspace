@@ -15,7 +15,7 @@ workspaces() {
 	done
 
 	#check if Focused
-	for num in $(hyprctl monitors | awk 'NR==3 {print $3}'); do
+	for num in $(hyprctl monitors | awk 'NR==4 {print $3}'); do
 		export f"$num"="$num"
 	done
 
