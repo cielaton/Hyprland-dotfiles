@@ -2,7 +2,7 @@
 /* Everyone is permitted to copy and distribute copies of this file under GNU-GPL3 */
 
 configuration {
-    font:                           "JetBrains Mono Medium 10";
+    font:                           "jetbrains mono medium 10";
     show-icons:                     false;
     display-drun: 					"";
     drun-display-format:            "{icon} {name}";

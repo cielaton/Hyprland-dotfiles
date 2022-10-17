@@ -10,4 +10,31 @@
 	urgent:				#e06c75;
 	on:					#98c379;
 	off:				#e06c75;
+
+  black: #454c59;
+  black-darker: #282c34;
+
+  red: #ff7a85;
+  red-darker: #e06c75;
+
+  green: #b5e890;
+  green-darker: #98c379;
+
+  yellow: #ffd68a;
+  yellow-darker: #e5c07b;
+
+  blue: #69bbff;
+  blue-darker: #61afef;
+
+  magenta: #e48aff;
+  magenta-darker: #c678dd;
+
+  cyan: #66d9e8;
+  cyan-darker: #56b6c2;
+
+  white: #cfd7e6;
+  white-darker: #abb2bf;
+
+  element-background-color: #38384d;
+  window-background-color: #1e2127;
 }

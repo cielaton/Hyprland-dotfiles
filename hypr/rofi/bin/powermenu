@@ -1,87 +1,76 @@
-#!/usr/bin/env bash
+#! /usr/bin/env bash
 
-## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
-## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+config_dir=$HOME/.config/hypr/rofi
+rofi_command="rofi -theme $config_dir/themes/powermenu.rasi"
+up_time=$(uptime -p | sed 's/up//')
 
-DIR="$HOME/.config/hypr"
-rofi_command="rofi -theme $DIR/rofi/themes/powermenu.rasi"
-uptime=$(uptime -p | sed -e 's/up //g')
+# Show confirmation
+show_confirm() {
+	rofi -l 0 -dmenu -theme "$config_dir"/themes/confirmation/confirm.rasi -i -p "Are you sure? "
+}
 
-# Options
-shutdown=""
-reboot=""
-powersaving=""
-screenoff=""
+# Show error message
+show_message() {
+	rofi -theme "$config_dir"/themes/confirmation/askpass.rasi -e "Valid input: y / n / yes / no"
+}
+
+# Define icon
+
+poweroff=""
+restart=""
+suspend=""
+screenoff=""
 logout=""
 
-# Get user confirmation
-get_confirmation() {
-	rofi -dmenu -i \
-		-no-fixed-num-lines \
-		-p "Are You Sure? : " \
-		-theme "$DIR"/rofi/themes/confirm.rasi
-}
+# Show menu
+returned_choosen="$(echo -e "$poweroff\n$restart\n$suspend\n$screenoff\n$logout" | $rofi_command -dmenu -steal-focus -p "$up_time")"
 
-# Show message
-show_msg() {
-	rofi -theme "$DIR"/rofi/themes/askpass.rasi -e "Options  -  yes / y / no / n"
-}
+# Get confirmation
+if [[ $returned_choosen =~ ($poweroff|$restart|$suspend|$screenoff|$logout) ]]; then
+	returned_confirm=$(show_confirm &)
+fi
 
-# Variable passed to rofi
-options="$shutdown\n$reboot\n$powersaving\n$screenoff\n$logout"
-
-chosen="$(echo -e "$options" | $rofi_command -p "UP - $uptime" -dmenu -selected-row 2)"
-case $chosen in
-"$shutdown")
-	ans=$(get_confirmation &)
-	if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+# Command for specific choices
+case $returned_choosen in
+"$poweroff")
+	if [[ $returned_confirm =~ (y|yes|Y|YES) ]]; then
 		systemctl poweroff
-	elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
-		exit
 	else
-		show_msg
+		show_message
 	fi
 	;;
-"$reboot")
-	ans=$(get_confirmation &)
-	if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
-		systemctl reboot
-	elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
-		exit
+
+"$restart")
+	if [[ $returned_confirm =~ (y|yes|Y|YES) ]]; then
+		systemctl restart
 	else
-		show_msg
+		show_message
 	fi
 	;;
-"$powersaving")
-	ans=$(get_confirmation &)
-	if [[ $ans == "yes" || $ans == "YES" || $ans == "y" ]]; then
-		source /home/kiet/.config/hypr/rofi/bin/lockscreen
+
+"$suspend")
+	if [[ $returned_confirm =~ (y|yes|Y|YES) ]]; then
 		systemctl suspend
-	elif [[ $ans == "no" || $ans == "NO" || $ans == "n" ]]; then
-		exit
+		exec ./lockscreen
 	else
-		show_msg
+		show_message
 	fi
 	;;
+
 "$screenoff")
-	ans=$(get_confirmation &)
-	if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
-		source /home/kiet/.config/hypr/rofi/bin/lockscreen
+	if [[ $returned_confirm =~ (y|yes|Y|YES) ]]; then
 		hyprctl dispatch dpms off
-	elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
-		exit
+		exec ./lockscreen
 	else
-		show_msg
+		show_message
 	fi
 	;;
 "$logout")
-	ans=$(get_confirmation &)
-	if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+	if [[ $returned_confirm =~ (y|yes|Y|YES) ]]; then
 		kill -9 -1
-	elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
-		exit
 	else
-		show_msg
+		show_message
 	fi
 	;;
+
 esac
