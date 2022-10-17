@@ -58,7 +58,8 @@
            (literal :content workspace))
 
 (defwidget icon_bat []
-           (overlay    
+           (box :class "icon_module"
+           (overlay 
            (box
                 :class "icon_bat_fake_background"
                 :width 38
@@ -66,7 +67,7 @@
            (label :class "icon_bat"
                   :text ""
                   :hexpand false
-           )))
+           ))))
 
 (defwidget text_bat []
            (label :class "text_bat"
