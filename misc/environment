@@ -1,0 +1,38 @@
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+
+# Set editor
+EDITOR=nvim
+
+# wayland support for firefox
+MOZ_ENABLE_WAYLAND=1
+
+# Hardware acceleration
+LIBVA_DRIVER_NAME=radeonsi
+
+# Input method
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+
+# Qt 
+QT_STYLE_OVERRIDE=kvantum
+# QT_QPA_PLATFORM=wayland
+
+# Fix hyprland cursor
+GDK_SCALE=0
+XCURSOR_SIZE=24
+
+# Fix jetbrains application blank screen
+_JAVA_AWT_WM_NONREPARENTING=1
+
+# For Libreoffice
+SAL_USE_VCLPLUGIN=gtk3
+
+##### Library and include path for C/C++ development #####
+LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib:$LD_LIBRARY_PATH
+LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib:$LIBRARY_PATH
+CPATH=/usr/include/glib-2.0:/usr/lib64/glib-2.0/include/:/usr/include/libnm/:$CPATH
