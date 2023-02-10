@@ -1,0 +1,134 @@
+@use "sass:list";
+// This file followed by catppuccin color scheme
+
+// Color definition
+$Rosewater: #f4dbd6;
+$Flamingo: #f0c6c6;
+$Pink: #f5bde6;
+$Mauve: #c6a0f6;
+$Red: #ed8796;
+$Maroon: #ee99a0;
+$Peach: #f5a97f;
+$Yellow: #eed49f;
+$Green: #a6da95;
+$Teal: #8bd5ca;
+$Sky: #91d7e3;
+$Sapphire: #7dc4e4;
+$Blue: #8aadf4;
+$Lavender: #b7bdf8;
+$Text: #cad3f5;
+$Subtext1: #b8c0e0;
+$Subtext0: #a5adcb;
+$Overlay2: #939ab7;
+$Overlay1: #8087a2;
+$Overlay0: #6e738d;
+$Surface2: #5b6078;
+$Surface1: #494d64;
+$Surface0: #363a4f;
+$Base: #24273a;
+$Mantle: #1e2030;
+$Crust: #181926;
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 16px;
+}
+
+window#waybar {
+  background: #222324;
+}
+
+#custom-launcher {
+  font-size: 20px;
+  color: #00bfff; /* deepskyblue */
+  padding: 0px 15px 0px 15px;
+}
+
+#cpu,
+#memory,
+#temperature {
+  font-size: 14px;
+  background: $Surface0;
+  margin: 5px 0px 5px 0px;
+}
+
+#cpu {
+  color: $Yellow;
+  padding: 0px 10px 0px 12px;
+  border-radius: 8px 0px 0px 8px;
+}
+
+#memory {
+  color: $Green;
+  padding: 0px 10px 0px 0px;
+}
+
+#temperature {
+  color: $Blue;
+  padding: 0px 12px 0px 0px;
+  border-radius: 0px 8px 8px 0px;
+}
+
+#custom-wrap-left {
+  font-size: 18px;
+}
+
+#custom-wrap-right {
+  font-size: 18px;
+}
+#custom-pacman-update {
+  color: $Teal;
+}
+
+$workspaces-color: $Blue, $Red, $Green, $Mauve, $Rosewater, $Peach;
+@each $color in $workspaces-color {
+  $index: list.index($workspaces-color, $color);
+  #workspaces button:nth-child(#{$index}) label {
+    color: $color;
+    padding: 0px 8px;
+  }
+}
+
+#battery {
+  color: $Green;
+  margin: 0px 10px 0px 0px;
+}
+
+#pulseaudio,
+#backlight {
+  font-size: 14px;
+  background: $Surface0;
+  margin: 5px 0px 5px 0px;
+}
+
+#backlight {
+  color: $Yellow;
+  padding: 0px 10px 0px 10px;
+  border-radius: 8px 0px 0px 8px;
+}
+
+#pulseaudio {
+  color: $Sky;
+  padding: 0px 10px 0px 0px;
+  border-radius: 0px 8px 8px 0px;
+}
+#custom-right-arr {
+  color: $Blue;
+}
+
+#network {
+  color: $Mauve;
+}
+
+#clock {
+  margin: 0px 15px 0px 0px;
+}
+
+#custom-dot {
+  color: $Overlay0;
+}
+#custom-dot-alt {
+  color: $Subtext0;
+}
