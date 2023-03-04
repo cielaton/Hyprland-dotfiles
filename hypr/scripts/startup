@@ -7,7 +7,7 @@
 # Kill already running process
 _ps=(mako xfce-polkit)
 for _prs in "${_ps[@]}"; do
-	if [[ $(pidof ${_prs}) ]]; then
+	if [[ $(pidof "${_prs}") ]]; then
 		killall -9 "${_prs}"
 	fi
 done
@@ -16,16 +16,16 @@ done
 /usr/lib/xfce-polkit/xfce-polkit &
 
 # Set wallpaper
-swaybg --output '*' --mode fill --image ~/.config/hypr/wallpapers/wallpaper.jpg &
-
-# Apply themes
-~/.config/hypr/scripts/gtkthemes &
+swaybg --output '*' --mode fill --image ~/.config/hypr/wallpapers/wallpaper.png &
 
 # Lauch notification daemon (mako)
 ~/.config/hypr/scripts/notifications &
 
-# Lauch statusbar (eww)
-eww open bar
+# Launch statusbar (eww)
+# eww open bar
+
+# Launch statusbar (waybar)
+waybar
 
 # Start fcitx5
 fcitx5

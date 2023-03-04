@@ -54,32 +54,32 @@ window#waybar {
 
 #workspaces button:nth-child(1) label {
   color: #8aadf4;
-  padding: 0px 8px;
+  margin: 0px 8px;
 }
 
 #workspaces button:nth-child(2) label {
   color: #ed8796;
-  padding: 0px 8px;
+  margin: 0px 8px;
 }
 
 #workspaces button:nth-child(3) label {
   color: #a6da95;
-  padding: 0px 8px;
+  margin: 0px 8px;
 }
 
 #workspaces button:nth-child(4) label {
   color: #c6a0f6;
-  padding: 0px 8px;
+  margin: 0px 8px;
 }
 
 #workspaces button:nth-child(5) label {
   color: #f4dbd6;
-  padding: 0px 8px;
+  margin: 0px 8px;
 }
 
 #workspaces button:nth-child(6) label {
   color: #f5a97f;
-  padding: 0px 8px;
+  margin: 0px 8px;
 }
 
 #battery {

@@ -87,7 +87,7 @@ $workspaces-color: $Blue, $Red, $Green, $Mauve, $Rosewater, $Peach;
   $index: list.index($workspaces-color, $color);
   #workspaces button:nth-child(#{$index}) label {
     color: $color;
-    padding: 0px 8px;
+    margin: 0px 8px;
   }
 }
 

@@ -1,12 +1,24 @@
 # Starship promp config path
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
-# Launch afetch
-afetch
+# Launch nitch
+nitch
 
 # external value for PATH
 export PATH=/$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+
+# Android development
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
 export PATH=$HOME/Android/Sdk/emulator:$PATH
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+# Matlab
+export PATH=$HOME/matlab/R2022b/bin:$PATH
+
+# For react-native
+export ANDROID_HOME=$HOME/Android/Sdk
 
 # starship promp
 eval "$(starship init zsh)"
@@ -19,7 +31,8 @@ source $HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 # Alias
 alias ls="exa -a"
 alias grep="grep --color=always"
-
+# alias nvim="WINIT_UNIX_BACKEND=x11 neovide"
+alias scrcpy="scrcpy --turn-screen-off --stay-awake"
 # Lines configured by zsh-newuser-install
 #
 HISTFILE=~/.histfile

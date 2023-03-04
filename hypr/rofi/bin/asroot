@@ -3,7 +3,7 @@
 ## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
-DIR="$HOME/.config/i3"
+DIR="$HOME/.config/hypr/"
 
 rofi_command="rofi -theme $DIR/rofi/themes/asroot.rasi"
 
@@ -22,21 +22,19 @@ term='alacritty --class alacritty-float,alacritty-float --config-file /root/.con
 
 chosen="$(echo -e "$options" | $rofi_command -p "Run as root" -dmenu -selected-row 0)"
 case $chosen in
-    $terminal)
-        "$DIR"/bin/asroot.sh "$term"
-        ;;
-    $files)
-        "$DIR"/bin/asroot.sh 'dbus-run-session thunar'
-        ;;
-    $editor)
-        "$DIR"/bin/asroot.sh geany
-        ;;
-    $clifm)
-        "$DIR"/bin/asroot.sh "$term -e ranger"
-        ;;
-    $vim)
-        "$DIR"/bin/asroot.sh "$term -e vim"
-        ;;
+"$terminal")
+	"$DIR"/bin/asroot.sh "$term"
+	;;
+"$files")
+	"$DIR"/bin/asroot.sh 'dbus-run-session thunar'
+	;;
+"$editor")
+	"$DIR"/bin/asroot.sh geany
+	;;
+"$clifm")
+	"$DIR"/bin/asroot.sh "$term -e ranger"
+	;;
+"$vim")
+	"$DIR"/bin/asroot.sh "$term -e vim"
+	;;
 esac
-
-

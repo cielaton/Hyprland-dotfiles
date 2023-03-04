@@ -42,7 +42,7 @@ case $returned_choosen in
 
 "$restart")
 	if [[ $returned_confirm =~ (y|yes|Y|YES) ]]; then
-		systemctl restart
+		systemctl reboot
 	else
 		show_message
 	fi
@@ -51,7 +51,7 @@ case $returned_choosen in
 "$suspend")
 	if [[ $returned_confirm =~ (y|yes|Y|YES) ]]; then
 		systemctl suspend
-		exec ./lockscreen
+		exec lockscreen
 	else
 		show_message
 	fi
@@ -60,7 +60,7 @@ case $returned_choosen in
 "$screenoff")
 	if [[ $returned_confirm =~ (y|yes|Y|YES) ]]; then
 		hyprctl dispatch dpms off
-		exec ./lockscreen
+		exec lockscreen
 	else
 		show_message
 	fi

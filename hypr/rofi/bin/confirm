@@ -4,4 +4,4 @@
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
 rofi -dmenu -i -no-fixed-num-lines -p "Are You Sure? : " \
-	-theme ~/.config/hypr/rofi/themes/confirm.rasi
+	-theme ~/.config/rofi/themes/confirm.rasi
