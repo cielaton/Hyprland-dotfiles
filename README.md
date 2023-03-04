@@ -8,6 +8,8 @@
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | <img src="https://github.com/kartorias1/Hyprland-dotfiles/blob/main/screenshots/screenshot1.png" alt=""> | <img src="https://github.com/kartorias1/Hyprland-dotfiles/blob/main/screenshots/screenshot1.png" alt=""> |
 
+<center><h4>Hail Catppuccin</h4></center>
+
 ## Components:
 
 - Terminal: [`kitty`](https://github.com/kovidgoyal/kitty)
@@ -16,7 +18,7 @@
 - Status bar: [`eww`](https://github.com/elkowar/eww)
 - Menu : [`rofi`](https://github.com/lbonn/rofi) (Include `launcher`, `powermenu`, `screenshots`, ...)
   > Note that this is the Wayland compatible version of Rofi.
-- Fetch : Modified [`afetch`](https://github.com/13-CF/afetch)
+- Fetch : [`nitch`](https://github.com/ssleert/nitch)
 
 ## Nedded packages:
 
