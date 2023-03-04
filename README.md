@@ -8,7 +8,7 @@
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | <img src="https://github.com/kartorias1/Hyprland-dotfiles/blob/main/screenshots/screenshot1.png" alt=""> | <img src="https://github.com/kartorias1/Hyprland-dotfiles/blob/main/screenshots/screenshot1.png" alt=""> |
 
-<center><h4>Hail Catppuccin</h4></center>
+<h4 align="center">Hail Catppuccin</h4>
 
 ## Components:
 
