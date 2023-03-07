@@ -5,3 +5,4 @@ cp -r "$HOME"/.config/kitty .
 cp -r "$HOME"/.config/starship .
 cp -r "$HOME"/.config/waybar/ .
 cp "$HOME"/.zshrc .
+cp -r "$HOME"/backup .

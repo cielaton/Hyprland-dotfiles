@@ -6,7 +6,7 @@
 }
 
 window#waybar {
-  background: #222324;
+  background: rgba(30, 30, 46, 0.6);
 }
 
 #custom-launcher {
