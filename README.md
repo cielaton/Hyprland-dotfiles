@@ -21,7 +21,9 @@
 
 ## Miscellaneous:
 
-- Icon fonts: `backup/`
+- Icon fonts: `backup/icomoon.zip`
+- Cursor theme: `backup/Qogir-cursor`
+- Environment variable (if you having some wayland compatibility problem): `misc/environment`
 
 ## Nedded packages:
 
