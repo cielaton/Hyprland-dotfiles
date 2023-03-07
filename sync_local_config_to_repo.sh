@@ -1,8 +1,8 @@
 #!/bin/env bash
 
-cp -r "$HOME"/.config/hypr/ .
-cp -r "$HOME"/.config/kitty .
-cp -r "$HOME"/.config/starship .
-cp -r "$HOME"/.config/waybar/ .
+rsync -a --delete-after "$HOME"/.config/hypr/ ./hypr
+rsync -a --delete-after "$HOME"/.config/kitty ./kitty
+rsync -a --delete-after "$HOME"/.config/starship ./starship
+rsync -a --delete-after "$HOME"/.config/waybar/ ./waybar
 cp "$HOME"/.zshrc .
-cp -r "$HOME"/backup .
+rsync -a --delete-after "$HOME"/backup ./backup
