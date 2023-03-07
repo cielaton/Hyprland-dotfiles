@@ -1,7 +1,0 @@
-"$schema" = 'https://starship.rs/config-schema.json'
-
-add_newline = true
-[character] # The name of the module we are configuring is "character"
-success_symbol = "[\\[I\\]](white) [](bold yellow)[](bold purple)[](bold green) [](bold blue) "
-error_symbol = "[\\[I\\]](white) [](bold yellow)[](bold purple)[](bold green) [](bold red) "
-vimcmd_symbol = "[\\[N\\]](white) [](bold yellow)[](bold purple)[](bold green) [](bold blue) "
