@@ -7,3 +7,4 @@ rsync -a --delete-after "$HOME"/.config/waybar/ ./waybar
 cp "$HOME"/.zshrc .
 rsync -a --delete-after "$HOME"/backup/ ./backup
 rsync -a --delete-after "$HOME"/.config/cava/ ./cava
+rsync -a --delete-after "$HOME"/.config/bat/ ./bat
