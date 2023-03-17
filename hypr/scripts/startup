@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
-##
-## Autostart Programs
-
 # Kill already running process
 _ps=(mako xfce-polkit)
 for _prs in "${_ps[@]}"; do
@@ -21,15 +17,8 @@ swaybg --output '*' --mode fill --image ~/.config/hypr/wallpapers/wallpaper.png 
 # Lauch notification daemon (mako)
 ~/.config/hypr/scripts/notifications &
 
-# Launch statusbar (eww)
-# eww open bar
-
 # Launch statusbar (waybar)
 waybar
 
-# Start fcitx5
-fcitx5
-
-# Clean eww defliten files
-echo 00 >"$HOME"/.config/eww/deflisten_condition/brightness
-echo 00 >"$HOME"/.config/eww/deflisten_condition/volume
+# Set cpu governor to performance
+cpupower frequency-set -g performance
