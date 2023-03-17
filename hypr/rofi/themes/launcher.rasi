@@ -23,6 +23,7 @@ element-text, element-icon , mode-switcher {
 
 window {
     height: 360px;
+    width: 700px;
     border: 3px;
     border-color: @black;
     background-color: @background;
@@ -79,7 +80,7 @@ element-icon {
 
 element selected {
     background-color:  @selected;
-    text-color: @foreground  ;
+    text-color: @background;
 }
 
 mode-switcher {
