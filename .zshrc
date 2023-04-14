@@ -17,6 +17,9 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 # Matlab
 export PATH=$HOME/matlab/R2022b/bin:$PATH
 
+#Yarn global
+export PATH=$HOME/.yarn/bin:$PATH
+
 # For react-native
 export ANDROID_HOME=$HOME/Android/Sdk
 
