@@ -22,3 +22,9 @@ waybar
 
 # Set cpu governor to performance
 cpupower frequency-set -g performance
+
+# launch nm-applet
+nm-applet --indicator
+
+# launch fcitx5
+fcitx5 -d

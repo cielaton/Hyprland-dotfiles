@@ -1,7 +1,7 @@
 # Starship promp config path
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
-# Launch nitch
+# Startup programs when start the shell
 nitch
 
 # external value for PATH
@@ -55,3 +55,5 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+export QSYS_ROOTDIR="/home/kiet/intelFPGA/22.1std/quartus/sopc_builder/bin"
