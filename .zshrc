@@ -23,13 +23,13 @@ export PATH=$HOME/.yarn/bin:$PATH
 # For react-native
 export ANDROID_HOME=$HOME/Android/Sdk
 
-# starship promp
-eval "$(starship init zsh)"
-
 # zsh plugins
 source $HOME/.zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
+# starship promp
+eval "$(starship init zsh)"
 
 # Alias
 alias ls="exa -a"
@@ -42,7 +42,6 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd extendedglob
-bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/kiet/.zshrc'
