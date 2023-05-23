@@ -14,10 +14,13 @@
 - Shell: [`Zshell`](https://www.zsh.org/)
 - Prompt: [`Starship`](https://starship.rs/)
 - Editor: [`NvChad`](https://github.com/NvChad/NvChad)
-- Status bar: [`Waybar`](https://github.com/Alexays/Waybar)
-- Menu : [`Rofi`](https://github.com/lbonn/rofi) (Include `launcher`, `powermenu`, `screenshots`, ...)
+- Status bar: [`waybar`](https://github.com/Alexays/Waybar)
+- Menu : [`rofi`](https://github.com/lbonn/rofi) (Include `launcher`, `powermenu`, `screenshots`, ...)
   > Note that this is the Wayland compatible version of Rofi.
-- Fetch : [`Nitch`](https://github.com/ssleert/nitch)
+- Fetch : [`nitch`](https://github.com/ssleert/nitch)
+- Terminal multiplexer: [`Tmux`](https://github.com/tmux/tmux/wiki)
+- Cava: [`cava`](https://github.com/karlstav/cava)
+- Better than cat: [`bat`](https://github.com/sharkdp/bat)
 
 ## Miscellaneous:
 
