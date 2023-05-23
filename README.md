@@ -4,7 +4,7 @@
 <h3 align = "center">My customized Wayland desktop on Archlinux</h3>
 <br>
 
-<img src="https://github.com/kartorias1/Hyprland-dotfiles/blob/main/screenshots/screenshots.png" alt="">
+<img src="https://github.com/kartorias1/Hyprland-dotfiles/blob/main/screenshots/screenshot.png" alt="">
 
 <h4 align="center">Hail Catppuccin</h4>
 
