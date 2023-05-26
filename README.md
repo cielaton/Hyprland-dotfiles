@@ -21,8 +21,9 @@
 - Terminal multiplexer: [`Tmux`](https://github.com/tmux/tmux/wiki)
 - Cava: [`cava`](https://github.com/karlstav/cava)
 - Better than cat: [`bat`](https://github.com/sharkdp/bat)
-
-> `Mako` `Rofi` configuration files and `scripts` are under hypr/ folder.
+```
+`Mako` `Rofi` configuration files and `scripts` are under hypr/ folder.
+```
 
 ## Miscellaneous:
 
