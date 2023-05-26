@@ -50,8 +50,8 @@ case $returned_choosen in
 
 "$suspend")
 	if [[ $returned_confirm =~ (y|yes|Y|YES) ]]; then
+		souce ./lockscreen
 		systemctl suspend
-		exec lockscreen
 	else
 		show_message
 	fi
@@ -59,8 +59,8 @@ case $returned_choosen in
 
 "$screenoff")
 	if [[ $returned_confirm =~ (y|yes|Y|YES) ]]; then
+		source ./lockscreen
 		hyprctl dispatch dpms off
-		exec lockscreen
 	else
 		show_message
 	fi
