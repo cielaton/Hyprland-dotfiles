@@ -22,6 +22,8 @@
 - Cava: [`cava`](https://github.com/karlstav/cava)
 - Better than cat: [`bat`](https://github.com/sharkdp/bat)
 
+> `Mako` `Rofi` configuration files and `scripts` are under hypr/ folder.
+
 ## Miscellaneous:
 
 - Icon fonts: `backup/icomoon.zip`
