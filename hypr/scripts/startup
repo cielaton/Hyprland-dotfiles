@@ -18,13 +18,13 @@ swaybg --output '*' --mode fill --image ~/.config/hypr/wallpapers/wallpaper.png 
 ~/.config/hypr/scripts/notifications &
 
 # Launch statusbar (waybar)
-waybar
+waybar &
 
 # Set cpu governor to performance
-cpupower frequency-set -g performance
+cpupower frequency-set -g performance &
 
 # launch nm-applet
-nm-applet --indicator
+nm-applet --indicator &
 
 # launch fcitx5
-fcitx5 -d
+fcitx5 -d &
