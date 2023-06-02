@@ -1,3 +1,3 @@
 function nvim
-  neovide
+  neovide $argv
 end
