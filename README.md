@@ -26,11 +26,9 @@ Mako Rofi configuration files and scripts are under hypr/ folder.
 ```
 
 ## Miscellaneous:
-
 - Icon fonts: `backup/icomoon.zip`
 - Cursor theme: `backup/Qogir-cursor`
 - Environment variable (if you having some wayland compatibility problem): `misc/environment`
 
 ## Nedded packages:
-
 (all of the above components) plus [`hyprland`](https://github.com/hyprwm/Hyprland) `swaybg` `swayidle` `swaylock` `wlroots` `wl-clipboard` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `mpv` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `nm-applet`
