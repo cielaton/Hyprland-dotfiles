@@ -10,8 +10,8 @@
 
 ## Components:
 
-- Terminal: [`Kitty`](https://github.com/kovidgoyal/kitty)
-- Shell: [`Zshell`](https://www.zsh.org/)
+- Terminal: [`kitty`](https://github.com/kovidgoyal/kitty)
+- Shell: [`fish`](https://fishshell.com/)
 - Prompt: [`Starship`](https://starship.rs/)
 - Editor: [`NvChad`](https://github.com/NvChad/NvChad)
 - Status bar: [`waybar`](https://github.com/Alexays/Waybar)
@@ -22,11 +22,12 @@
 - Cava: [`cava`](https://github.com/karlstav/cava)
 - Better than cat: [`bat`](https://github.com/sharkdp/bat)
 ```
-Mako Rofi configuration files and scripts are under hypr/ folder.
+Mako, Rofi configuration files and Scripts are under hypr/ folder.
 ```
 
 ## Miscellaneous:
 
+- Font: JetBrainsMono Nerd Font
 - Icon fonts: `backup/icomoon.zip`
 - Cursor theme: `backup/Qogir-cursor`
 - Environment variable (if you having some wayland compatibility problem): `misc/environment`
