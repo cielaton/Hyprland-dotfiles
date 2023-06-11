@@ -21,14 +21,14 @@
 - Terminal multiplexer: [`Tmux`](https://github.com/tmux/tmux/wiki)
 - Cava: [`cava`](https://github.com/karlstav/cava)
 - Better than cat: [`bat`](https://github.com/sharkdp/bat)
-```
-Mako, Rofi configuration files and Scripts are under hypr/ folder.
-```
+
+Mako, Rofi configuration files and Scripts are under `hypr/ folder`.
 
 ## Miscellaneous:
 
 - Font: JetBrainsMono Nerd Font
-- Icon fonts: `backup/icomoon.zip`
+- Wallpapers: `hypr/wallpapers`
+- Icon fonts: NerdFonts Icon + `backup/icomoon.zip`
 - Cursor theme: `backup/Qogir-cursor`
 - Environment variable (if you having some wayland compatibility problem): `misc/environment`
 
