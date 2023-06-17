@@ -22,7 +22,7 @@
 - Cava: [`cava`](https://github.com/karlstav/cava)
 - Better than cat: [`bat`](https://github.com/sharkdp/bat)
 
-Mako, Rofi configuration files and Scripts are under `hypr/ folder`.
+Mako, Rofi configuration files and Scripts are under `hypr/` folder.
 
 ## Miscellaneous:
 
