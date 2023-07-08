@@ -142,6 +142,7 @@ window#waybar {
 
 #network {
   color: #c6a0f6;
+  margin-right: 10px;
 }
 
 #custom-dot {
