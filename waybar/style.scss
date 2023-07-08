@@ -37,13 +37,34 @@ $Crust: #181926;
 }
 
 window#waybar {
-  background: rgb(30, 30, 46, 0.6);
+  background-color: #00000000;
+}
+
+.modules-left {
+  background-color: $Mantle;
+  border-radius: 8px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.modules-center {
+  background-color: $Mantle;
+  border-radius: 8px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.modules-right {
+  background-color: $Mantle;
+  border-radius: 8px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 #custom-launcher {
   font-size: 20px;
   color: #00bfff; /* deepskyblue */
-  padding: 0px 15px 0px 15px;
+  padding-right: 10px;
 }
 
 #cpu,
@@ -51,13 +72,14 @@ window#waybar {
 #temperature {
   font-size: 14px;
   background: $Surface0;
-  margin: 5px 0px 5px 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 #cpu {
   color: $Yellow;
   padding: 0px 10px 0px 12px;
-  border-radius: 8px 0px 0px 8px;
+  border-radius: 5px 0px 0px 5px;
 }
 
 #memory {
@@ -68,18 +90,26 @@ window#waybar {
 #temperature {
   color: $Blue;
   padding: 0px 12px 0px 0px;
-  border-radius: 0px 8px 8px 0px;
+  border-radius: 0px 5px 5px 0px;
 }
 
-#custom-wrap-left {
-  font-size: 18px;
+#custom-window-name {
+  margin-right: 10px;
 }
 
-#custom-wrap-right {
-  font-size: 18px;
+#custom-pacman-update-icon {
+  background-color: $Teal;
+  color: $Crust;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
 }
+
 #custom-pacman-update {
   color: $Teal;
+  margin: 5px 10px 5px 0px;
 }
 
 $workspaces-color: $Blue, $Red, $Green, $Mauve, $Rosewater, $Peach;
@@ -100,19 +130,20 @@ $workspaces-color: $Blue, $Red, $Green, $Mauve, $Rosewater, $Peach;
 #backlight {
   font-size: 14px;
   background: $Surface0;
-  margin: 5px 0px 5px 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 #backlight {
   color: $Yellow;
   padding: 0px 10px 0px 10px;
-  border-radius: 8px 0px 0px 8px;
+  border-radius: 5px 0px 0px 5px;
 }
 
 #pulseaudio {
   color: $Sky;
   padding: 0px 10px 0px 0px;
-  border-radius: 0px 8px 8px 0px;
+  border-radius: 0px 5px 5px 0px;
 }
 #custom-right-arr {
   color: $Blue;
@@ -122,13 +153,27 @@ $workspaces-color: $Blue, $Red, $Green, $Mauve, $Rosewater, $Peach;
   color: $Mauve;
 }
 
-#clock {
-  margin: 0px 15px 0px 0px;
-}
-
 #custom-dot {
   color: $Overlay0;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 #custom-dot-alt {
   color: $Subtext0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#custom-clock-icon {
+  background-color: $Text;
+  color: $Crust;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+#clock {
+  padding-left: 10px;
 }

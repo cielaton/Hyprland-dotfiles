@@ -1,11 +1,11 @@
 {
   "include": "~/.config/waybar/configs/custom_modules/modules",
   "layer": "top",
-  "height": 40,
-  "margin-top": 0,
-  "margin-left": 0,
+  "height": 35,
+  "margin-top": 10,
+  "margin-left": 10,
   "margin-bottom": 0,
-  "margin-right": 0,
+  "margin-right": 10,
   "spacing": 0,
 
   "modules-left": [
@@ -16,11 +16,8 @@
     "temperature",
     "custom/separator",
     "custom/window-name",
-    "custom/dot",
-    "custom/wrap-left",
+    "custom/pacman-update-icon",
     "custom/pacman-update",
-    "custom/wrap-right",
-    "custom/dot",
     "tray"
   ],
 
@@ -32,6 +29,7 @@
     "custom/right-arr",
     "network",
     "custom/dot-alt",
+    "custom/clock-icon",
     "clock"
   ],
 
@@ -58,6 +56,10 @@
   "tray": {
     "icon-size": 20,
     "spacing": 8
+  },
+
+  "custom/clock-icon": {
+    "format": ""
   },
 
   "clock": {
@@ -129,8 +131,15 @@
     "interval": 1,
     "exec": "hyprctl activewindow | grep class | awk '{print $2}'"
   },
+
+  "custom-pacman-update-icon-background": {
+    "format": ""
+  },
+  "custom/pacman-update-icon": {
+    "format": ""
+  },
   "custom/pacman-update": {
-    "format": "  {} ",
+    "format": " {}",
     "interval": 3600,
     "exec": "checkupdates | wc -l",
     "signal": 8
