@@ -21,6 +21,7 @@
 - Terminal multiplexer: [`Tmux`](https://github.com/tmux/tmux/wiki)
 - Cava: [`cava`](https://github.com/karlstav/cava)
 - Better than cat: [`bat`](https://github.com/sharkdp/bat)
+- Notification daemon: [`mako`](https://github.com/emersion/mako)
 
 Mako, Rofi configuration files and Scripts are under `hypr/` folder.
 
