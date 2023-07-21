@@ -19,7 +19,7 @@ width=300
 height=100
 margin=10
 padding=15
-border-size=1
+border-size=2
 border-radius=10
 icons=1
 max-icon-size=48
@@ -36,15 +36,15 @@ anchor=top-right
 
 background-color=#20262C
 text-color=#f1fcf9
-border-color=#B4A1DB
-progress-color=over #B4A1DB
+border-color=#89dceb
+progress-color=over #89dceb
 
 [urgency=low]
-border-color=#B4A1DB
+border-color=#89dceb
 default-timeout=2000
 
 [urgency=normal]
-border-color=#B4A1DB
+border-color=#89dceb
 default-timeout=5000
 
 [urgency=high]
