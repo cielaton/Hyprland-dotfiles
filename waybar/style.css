@@ -64,6 +64,7 @@ window#waybar {
 
 #custom-window-name {
   margin-right: 10px;
+  color: #cad3f5;
 }
 
 #custom-pacman-update-icon {
@@ -78,7 +79,7 @@ window#waybar {
 
 #custom-pacman-update {
   color: #8bd5ca;
-  margin: 5px 10px 5px 0px;
+  margin: 5px 5px 5px 0px;
 }
 
 #workspaces button:nth-child(1) label {
@@ -169,6 +170,7 @@ window#waybar {
 
 #clock {
   padding-left: 10px;
+  color: #cad3f5;
 }
 
 /*# sourceMappingURL=style.css.map */

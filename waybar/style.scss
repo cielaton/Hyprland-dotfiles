@@ -93,9 +93,7 @@ window#waybar {
   border-radius: 0px 5px 5px 0px;
 }
 
-#custom-window-name {
-  margin-right: 10px;
-}
+#custom-window-name { margin-right: 10px; color: $Text; }
 
 #custom-pacman-update-icon {
   background-color: $Teal;
@@ -109,7 +107,7 @@ window#waybar {
 
 #custom-pacman-update {
   color: $Teal;
-  margin: 5px 10px 5px 0px;
+  margin: 5px 5px 5px 0px;
 }
 
 $workspaces-color: $Blue, $Red, $Green, $Mauve, $Rosewater, $Peach;
@@ -177,4 +175,5 @@ $workspaces-color: $Blue, $Red, $Green, $Mauve, $Rosewater, $Peach;
 
 #clock {
   padding-left: 10px;
+  color: $Text;
 }
