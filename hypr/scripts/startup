@@ -12,7 +12,7 @@ done
 /usr/lib/xfce-polkit/xfce-polkit &
 
 # Set wallpaper
-swaybg --output '*' --mode fill --image ~/.config/hypr/wallpapers/wallpaper4.jpg &
+# swaybg --output '*' --mode fill --image ~/.config/hypr/wallpapers/wallpaper4.jpg &
 
 # Lauch notification daemon (mako)
 ~/.config/hypr/scripts/notifications &
