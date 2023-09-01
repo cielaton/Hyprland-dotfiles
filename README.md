@@ -11,7 +11,7 @@
 ## Note
 I have moved to Artix (open-rc). Because of the missing systemd and its dependencies, some components cannot work correctly so I have to make some minor changes in the config.
 - If there is any compatibility issue, make sure to check the `Arch-legacy` folder.
-- I have switched to Zsh on Artix (because I hate its config method), but the starship prompt is still the same. You also want to install the plugin listed inside the shell config file before using it.
+- I have switched to `Zsh` on Artix (because I hate `Fish` config method), but the starship prompt is still the same. You also want to install the plugin listed inside the shell config file before using it.
 ## Components:
 
 - Terminal: [`kitty`](https://github.com/kovidgoyal/kitty)
