@@ -8,4 +8,4 @@ rsync -a --delete-after "$HOME"/backup/ ./backup
 rsync -a --delete-after "$HOME"/.config/cava/ ./cava
 rsync -a --delete-after "$HOME"/.config/bat/ ./bat
 rsync -a --delete-after "$HOME"/.config/tmux/ ./tmux
-rsync -a --delete-after "$HOME"/.config/fish/ ./fish
+rsync -a --delete-after "$HOME"/.zshrc ./.zshrc

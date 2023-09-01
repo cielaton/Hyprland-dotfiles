@@ -1,0 +1,76 @@
+#! /usr/bin/env bash
+
+config_dir=$HOME/.config/hypr/rofi
+rofi_command="rofi -theme $config_dir/themes/powermenu.rasi"
+up_time=$(uptime -p | sed 's/up//')
+
+# Show confirmation
+show_confirm() {
+	rofi -l 0 -dmenu -theme "$config_dir"/themes/confirmation/confirm.rasi -i -p "Are you sure? "
+}
+
+# Show error message
+show_message() {
+	rofi -theme "$config_dir"/themes/confirmation/askpass.rasi -e "Valid input: y / n / yes / no"
+}
+
+# Define icon
+
+poweroff=""
+restart=""
+suspend=""
+screenoff=""
+logout=""
+
+# Show menu
+returned_choosen="$(echo -e "$poweroff\n$restart\n$suspend\n$screenoff\n$logout" | $rofi_command -dmenu -steal-focus -p "$up_time")"
+
+# Get confirmation
+if [[ $returned_choosen =~ ($poweroff|$restart|$suspend|$screenoff|$logout) ]]; then
+	returned_confirm=$(show_confirm &)
+fi
+
+# Command for specific choices
+case $returned_choosen in
+"$poweroff")
+	if [[ $returned_confirm =~ (y|yes|Y|YES) ]]; then
+		systemctl poweroff
+	else
+		show_message
+	fi
+	;;
+
+"$restart")
+	if [[ $returned_confirm =~ (y|yes|Y|YES) ]]; then
+		systemctl reboot
+	else
+		show_message
+	fi
+	;;
+
+"$suspend")
+	if [[ $returned_confirm =~ (y|yes|Y|YES) ]]; then
+		souce ./lockscreen
+		systemctl suspend
+	else
+		show_message
+	fi
+	;;
+
+"$screenoff")
+	if [[ $returned_confirm =~ (y|yes|Y|YES) ]]; then
+		source ./lockscreen
+		hyprctl dispatch dpms off
+	else
+		show_message
+	fi
+	;;
+"$logout")
+	if [[ $returned_confirm =~ (y|yes|Y|YES) ]]; then
+		kill -9 -1
+	else
+		show_message
+	fi
+	;;
+
+esac

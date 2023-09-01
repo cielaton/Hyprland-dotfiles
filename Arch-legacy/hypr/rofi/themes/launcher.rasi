@@ -1,0 +1,103 @@
+configuration{
+    modi: "run,drun";
+    lines: 5;
+    font: "Sarasa Nerd Font 14";
+    show-icons: true;
+    icon-theme: "Oranchelo";
+    terminal: "st";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: " 󰲉  Apps ";
+    display-run: "   Run ";
+    sidebar-mode: true;
+}
+
+@import "colors.rasi"
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    height: 360px;
+    width: 700px;
+    border: 3px;
+    border-color: @black;
+    background-color: @background;
+}
+
+mainbox {
+    background-color: @background;
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: @background;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: @blue;
+    padding: 6px;
+    text-color: @background;
+    border-radius: 3px;
+    margin: 20px 0px 0px 20px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    margin: 20px 0px 0px 10px;
+    text-color: @foreground;
+    background-color: @background;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px;
+    margin: 10px 0px 0px 20px;
+    columns: 2;
+    background-color: @background;
+}
+
+element {
+    padding: 5px;
+    background-color: @background;
+    text-color: @foreground  ;
+}
+
+element-icon {
+    size: 25px;
+}
+
+element selected {
+    background-color:  @selected;
+    text-color: @background;
+}
+
+mode-switcher {
+    spacing: 0;
+  }
+
+button {
+    padding: 10px;
+    background-color: @black-darker;
+    text-color: @white;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+button selected {
+  border: 1px;
+  border-color: @blue;
+  background-color: @background;
+  text-color: @blue;
+}

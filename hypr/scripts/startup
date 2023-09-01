@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Kill already running process
-_ps=(mako xfce-polkit)
+_ps=(xfce-polkit)
 for _prs in "${_ps[@]}"; do
 	if [[ $(pidof "${_prs}") ]]; then
 		killall -9 "${_prs}"
@@ -14,14 +14,3 @@ done
 # Set wallpaper
 # swaybg --output '*' --mode fill --image ~/.config/hypr/wallpapers/wallpaper4.jpg &
 
-# Lauch notification daemon (mako)
-~/.config/hypr/scripts/notifications &
-
-# Launch statusbar (waybar)
-waybar &
-
-# Set cpu governor to performance
-cpupower frequency-set -g performance &
-
-# launch fcitx5
-fcitx5 -d &
