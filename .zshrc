@@ -36,6 +36,7 @@ export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
 ## ALIASES
 alias ls="exa"
+alias grep="grep --color=always"
 alias emulator="QT_QPA_PLATFORM=xcb emulator"
 
 autoload -Uz compinit
