@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Kill already running process
-_ps=(xfce-polkit)
+_ps=(mako xfce-polkit)
 for _prs in "${_ps[@]}"; do
 	if [[ $(pidof "${_prs}") ]]; then
 		killall -9 "${_prs}"
@@ -10,7 +10,3 @@ done
 
 # Polkit agent
 /usr/lib/xfce-polkit/xfce-polkit &
-
-# Set wallpaper
-# swaybg --output '*' --mode fill --image ~/.config/hypr/wallpapers/wallpaper4.jpg &
-
