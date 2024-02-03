@@ -86,7 +86,7 @@
     "format-wifi": " {essid}",
     "on-click": "iwgtk",
     "format-ethernet": " wired",
-    "format-disconnected": "",
+    "format-disconnected": " disconnected",
     "tooltip-format": "{ifname} via {gwaddr} ",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
     "tooltip-format-ethernet": "{ifname} ",
@@ -132,9 +132,6 @@
     "exec": "hyprctl activewindow | grep class | awk '{print $2}'"
   },
 
-  "custom-pacman-update-icon-background": {
-    "format": ""
-  },
   "custom/pacman-update-icon": {
     "format": ""
   },

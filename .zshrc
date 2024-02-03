@@ -20,7 +20,11 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/bin:$PATH
 export PATH=$ANDROID_HOME/emulator:$PATH
+export PATH=/home/kiet/.platformio/penv/bin:$PATH
+export PATH=$HOME/.config/yarn/global/node_modules/.bin/:$PATH
 
 ## PLUGINS
 # Syntax highlighting
@@ -38,7 +42,28 @@ export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 alias ls="exa"
 alias grep="grep --color=always"
 alias emulator="QT_QPA_PLATFORM=xcb emulator"
+alias obs="QT_QPA_PLATFORM=xcb obs"
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/kiet/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/kiet/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/home/kiet/miniforge3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/kiet/miniforge3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/home/kiet/miniforge3/etc/profile.d/mamba.sh" ]; then
+    . "/home/kiet/miniforge3/etc/profile.d/mamba.sh"
+fi
+# <<< conda initialize <<<
+
+
