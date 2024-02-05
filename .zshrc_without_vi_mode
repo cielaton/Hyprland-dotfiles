@@ -17,7 +17,6 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 ## Env variables
-
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 export PATH=$ANDROID_HOME/tools:$PATH
@@ -30,10 +29,9 @@ export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 ## PLUGINS
 # Syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# Vi mode
-source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 # Auto suggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 
 ## ALIASES
 alias ls="exa"
