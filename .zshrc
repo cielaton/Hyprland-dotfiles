@@ -36,7 +36,6 @@ source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ## ALIASES
-alias ls="exa"
 alias grep="grep --color=always"
 alias emulator="QT_QPA_PLATFORM=xcb emulator"
 alias obs="QT_QPA_PLATFORM=xcb obs"
