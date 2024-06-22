@@ -36,12 +36,12 @@
     "all-outputs": true,
     "format": "{icon}",
     "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      "6": "",
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
       "urgent": "",
       "active": "",
       "default": ""
@@ -54,7 +54,7 @@
   },
 
   "custom/clock-icon": {
-    "format": ""
+    "format": ""
   },
 
   "clock": {
@@ -65,30 +65,29 @@
 
   "cpu": {
     "interval": 10,
-    "format": " {usage}%",
+    "format": " {usage}%",
     "max-length": 10,
     "tooltip": false
   },
   "memory": {
     "interval": 30,
-    "format": " {used}GiB",
-    "format-alt": " {used:0.1f}G",
-    "max-length": 10
+    "format": "󰪢 {used}GiB",
+    "max-length": 15
   },
   "backlight": {
     "device": "amdgpu_bl1",
     "format": "{icon} {percent}",
     "tooltip": false,
-    "format-icons": ["", "", ""]
+    "format-icons": ["󰃞", "󰃟", "󰃠"]
   },
   "network": {
     "interface": "wlan0",
-    "format-wifi": " {essid}",
-    "on-click": "iwgtk",
-    "format-ethernet": " wired",
+    "format-wifi": "  {essid}",
+    "on-click": "cmst",
+    "format-ethernet": "󰈀 wired",
     "format-disconnected": " disconnected",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "tooltip-format-wifi": "Signal strenght: {signalStrength}%",
     "tooltip-format-ethernet": "{ifname} ",
     "tooltip-format-disconnected": "Disconnected"
   },
@@ -98,9 +97,9 @@
     "format-bluetooth": " ",
     "format-bluetooth-muted": " ",
     "tooltip": false,
-    "format-muted": "",
+    "format-muted": "",
     "format-icons": {
-      "default": ["", "", ""]
+      "default": ["", "", ""]
     },
     "on-click": "pavucontrol"
   },
@@ -112,16 +111,16 @@
       "critical": 15
     },
     "format": "{icon} {capacity}%",
-    "format-charging": " {icon} {capacity}%",
-    "format-icons": [" ", " ", " ", " "],
+    "format-charging": "󱐋 {icon} {capacity}%",
+    "format-icons": [" ", " ", " ", " ", " "],
     "max-length": 25,
     "tooltip": false
   },
   "custom/right-arr": {
-    "format": "  "
+    "format": "  "
   },
   "custom/icon": {
-    "format": ""
+    "format": "󰣇"
   },
   "custom/separator": {
     "format": " "
@@ -133,7 +132,7 @@
   },
 
   "custom/pacman-update-icon": {
-    "format": ""
+    "format": ""
   },
   "custom/pacman-update": {
     "format": " {}",
@@ -146,8 +145,8 @@
   "temperature": {
     "thermal-zone": 0,
     "critical-threshold": 80,
-    "format-critical": " {temperatureC}°C",
-    "format": " {temperatureC}°C"
+    "format-critical": " {temperatureC}°C",
+    "format": " {temperatureC}°C"
   },
 
   "custom/wrap-left": {

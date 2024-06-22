@@ -36,12 +36,19 @@ source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ## ALIASES
+alias ls="exa"
 alias grep="grep --color=always"
-alias emulator="QT_QPA_PLATFORM=xcb emulator"
+# alias emulator="QT_QPA_PLATFORM=xcb emulator"
 alias obs="QT_QPA_PLATFORM=xcb obs"
+# alias nvim="neovide --size 1400x800"
 
 autoload -Uz compinit
 compinit
 
 ## Using starship prompt
 eval "$(starship init zsh)"
+
+## Using zoxide
+eval "$(zoxide init zsh)"
+
+export QSYS_ROOTDIR="/home/kiet/.cache/paru/clone/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/23.1/quartus/sopc_builder/bin"

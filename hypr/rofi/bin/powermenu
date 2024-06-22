@@ -34,7 +34,7 @@ fi
 case $returned_choosen in
 "$poweroff")
 	if [[ $returned_confirm =~ (y|yes|Y|YES) ]]; then
-		loginctl poweroff
+		systemctl poweroff
 	else
 		show_message
 	fi
@@ -42,7 +42,7 @@ case $returned_choosen in
 
 "$restart")
 	if [[ $returned_confirm =~ (y|yes|Y|YES) ]]; then
-		loginctl reboot
+		systemctl reboot
 	else
 		show_message
 	fi

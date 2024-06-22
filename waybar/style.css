@@ -32,7 +32,8 @@ window#waybar {
 
 #custom-icon {
   font-size: 20px;
-  color: #00bfff; /* deepskyblue */
+  color: #00bfff;
+  /* deepskyblue */
   padding-right: 10px;
 }
 
@@ -68,10 +69,11 @@ window#waybar {
 }
 
 #custom-pacman-update-icon {
+  font-size: 13;
   background-color: #8bd5ca;
   color: #181926;
   padding-left: 5px;
-  padding-right: 5px;
+  padding-right: 10px;
   margin-top: 5px;
   margin-bottom: 5px;
   border-radius: 5px;
@@ -159,10 +161,11 @@ window#waybar {
 }
 
 #custom-clock-icon {
+  font-size: 13;
   background-color: #cad3f5;
   color: #181926;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 8px;
+  padding-right: 13px;
   margin-top: 5px;
   margin-bottom: 5px;
   border-radius: 5px;

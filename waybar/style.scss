@@ -61,9 +61,10 @@ window#waybar {
   padding-left: 15px;
 }
 
-#custom-icon{
+#custom-icon {
   font-size: 20px;
-  color: #00bfff; /* deepskyblue */
+  color: #00bfff;
+  /* deepskyblue */
   padding-right: 10px;
 }
 
@@ -93,13 +94,17 @@ window#waybar {
   border-radius: 0px 5px 5px 0px;
 }
 
-#custom-window-name { margin-right: 10px; color: $Text; }
+#custom-window-name {
+  margin-right: 10px;
+  color: $Text;
+}
 
 #custom-pacman-update-icon {
+  font-size: 13;
   background-color: $Teal;
   color: $Crust;
   padding-left: 5px;
-  padding-right: 5px;
+  padding-right: 10px;
   margin-top: 5px;
   margin-bottom: 5px;
   border-radius: 5px;
@@ -111,8 +116,10 @@ window#waybar {
 }
 
 $workspaces-color: $Blue, $Red, $Green, $Mauve, $Rosewater, $Peach;
+
 @each $color in $workspaces-color {
   $index: list.index($workspaces-color, $color);
+
   #workspaces button:nth-child(#{$index}) label {
     color: $color;
     margin: 0px 8px;
@@ -143,6 +150,7 @@ $workspaces-color: $Blue, $Red, $Green, $Mauve, $Rosewater, $Peach;
   padding: 0px 10px 0px 0px;
   border-radius: 0px 5px 5px 0px;
 }
+
 #custom-right-arr {
   color: $Blue;
 }
@@ -157,6 +165,7 @@ $workspaces-color: $Blue, $Red, $Green, $Mauve, $Rosewater, $Peach;
   padding-left: 10px;
   padding-right: 10px;
 }
+
 #custom-dot-alt {
   color: $Subtext0;
   padding-left: 10px;
@@ -164,10 +173,11 @@ $workspaces-color: $Blue, $Red, $Green, $Mauve, $Rosewater, $Peach;
 }
 
 #custom-clock-icon {
+  font-size: 13;
   background-color: $Text;
   color: $Crust;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 8px;
+  padding-right: 13px;
   margin-top: 5px;
   margin-bottom: 5px;
   border-radius: 5px;
