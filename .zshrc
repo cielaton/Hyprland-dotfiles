@@ -40,7 +40,7 @@ alias ls="exa"
 alias grep="grep --color=always"
 # alias emulator="QT_QPA_PLATFORM=xcb emulator"
 alias obs="QT_QPA_PLATFORM=xcb obs"
-# alias nvim="neovide --size 1400x800"
+alias nvim="neovide --size 1400x800"
 
 autoload -Uz compinit
 compinit

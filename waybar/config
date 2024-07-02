@@ -83,7 +83,7 @@
   "network": {
     "interface": "wlan0",
     "format-wifi": "  {essid}",
-    "on-click": "cmst",
+    "on-click": "nm-applet",
     "format-ethernet": "󰈀 wired",
     "format-disconnected": " disconnected",
     "tooltip-format": "{ifname} via {gwaddr}",
